@@ -1,0 +1,67 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+
+.main-box>.connection-content{
+    overflow: hidden;
+}
+.main-box>.connection-content>nav{
+    float: left;
+    width: 228px;
+    height: 744px;
+    background-color: #F2F5F7;
+    font-size: 17px;
+    color: #666666;
+}
+.main-box>.connection-content>nav>li{
+    padding: 30px;
+}
+.main-box>.connection-content>nav>li{
+    border-left: 7px solid transparent;
+    cursor: pointer;
+}
+.main-box>.connection-content>nav>li.active{
+    border-left: 7px solid #5592EF;
+    background-color: #ffffff;
+    color: #568BEB;
+}.main-box>.connection-content>nav>li>img{
+    vertical-align: middle;
+}
+.main-box>.connection-content>nav>li.policy-advice>img{
+    width: 21px;
+    height: 21px;
+    margin-right: 18px;
+}
+.main-box>.connection-content>nav>li.report>img{
+    width: 21px;
+    height: 22px;
+    margin-right: 16px;
+}
+.main-box>.connection-content>nav>li.feedback>img{
+    width: 16px;
+    height: 19px;
+    margin-right: 21px;
+}
+.main-box>.connection-content>nav>li.connection>img{
+    width: 21px;
+    height: 16px;
+    margin-right: 17px;
+}
+.main-box>.connection-content>nav>li.email>img{
+    width: 21px;
+    height: 16px;
+    margin-right: 17px;
+}
+.main-box>.connection-content>.iframe{
+    background-color: #ffffff;
+    float: left;
+    width: 768px;
+    height: 746px;
+    border: 1px solid #cccccc;
+    border-left: 0;
+}
+.main-box>.connection-content>.iframe>iframe{
+    width: 100%;
+    height: 100%;
+}

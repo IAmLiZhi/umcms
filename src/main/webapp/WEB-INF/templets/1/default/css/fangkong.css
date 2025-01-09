@@ -1,0 +1,111 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+.main-box>.content-box{
+    background-color: #F6F6F6;
+}
+.main-box>.content-box>div{
+    width: 945px;
+    margin: 0 auto;
+    border-bottom: 1px solid #579AF5;
+}
+.main-box .content-box div a{
+    color: #333333;
+}
+.main-box>.content-box div p{
+    margin: 27px  0 0 27px;
+    border-bottom: 3px solid #579AF5;
+    padding-bottom: 7px;
+}
+.main-box>.content-box div p>img{
+    width: 20px;
+    height: 18px;
+    margin-right: 11px;
+    color: #579AF5;
+    font-size: 17px;
+    vertical-align: middle;
+}
+.main-box>.content-box>ul{
+    width: 945px;
+    overflow: hidden;
+    margin: 11px auto 0;
+    padding: 0 11px 28px 27px;
+}
+.main-box>.content-box>ul:first-child{
+    margin-top: 7px;
+}
+.main-box>.content-box>ul>li{
+    margin-top: 15px;
+    list-style: outside;
+    list-style-position: inside;
+    color: #333333;
+    overflow: hidden;
+}
+.main-box>.content-box>ul>li>a{
+    width: 620px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+    line-height: 18px;
+}
+.main-box>.content-box>ul>li>.date{
+    float: right;
+}
+.main-box>.content-box>ul>li.more-box{
+    list-style: none;
+    float: right;
+    color: #5F91EB;
+}
+.main-box>.content-box>ul>li.more-box>a{
+    width: 60px;
+    color: #5F91EB;
+}
+.main-box>.content-box>.limit{
+    margin-top: 8px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.main-box>.content-box>.limit>a{
+    color: #666666;
+}
+.main-box>.content-box>.limit>span{
+    display: inline-block;
+}
+.main-box>.content-box>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.main-box>.content-box>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.main-box>.content-box>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.main-box>.content-box>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.main-box>.content-box>.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.main-box>.content-box>.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+}
+.footer{
+    margin-top: 104px;
+}

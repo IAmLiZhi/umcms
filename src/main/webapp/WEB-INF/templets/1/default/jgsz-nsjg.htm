@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/jgsz-nsjg.css">
+    
+</head>
+<body>
+    <div class="institution">
+        <p>机构列表</p>
+        <ul>
+            {ms:channel type=son typeid=14}
+                <li><a href="[field.typelink/]" target="_blank">[field.typetitle/]</a></li>
+            {/ms:channel}
+        </ul>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('ul li').lastLi();
+    })
+</script>
+</html>

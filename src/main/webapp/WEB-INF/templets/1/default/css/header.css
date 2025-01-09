@@ -1,0 +1,103 @@
+.header{
+    width: 996px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.header img{
+    width: 435px;
+    height: 112px;
+    margin: 33px 0 0 32px;
+}
+.header a{
+    position: relative;
+}
+/* .header a input{
+    overflow: hidden;
+    margin-top: 75px;
+    float: right;
+    width: 285px;
+    height: 36px;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    padding-left: 25px;
+    background-color: #D8E8F8;
+    border: 0;
+    cursor: pointer;
+    background-image: url('../image/header/search-blue.png');
+    background-size: 18px 19px;
+    background-repeat: no-repeat;
+    background-position: 246px 9px;
+
+}
+.header a input::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header a input:-moz-placeholder {
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header a input::-moz-placeholder{
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header a input:-ms-input-placeholder {
+    font-size: 13px;
+    color: #5F91EB;
+} */
+.header div{
+    position: relative;
+    float: right;
+    /* margin-top: 75px; */
+    margin-top: 95px;
+}
+.header div input{
+    overflow: hidden;
+    float: right;
+    width: 285px;
+    height: 36px;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    padding-left: 20px;
+    background-color: #D8E8F8;
+    border: 0;
+
+}
+.header div input::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header div input:-moz-placeholder {/* Firefox 18- */
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header div input::-moz-placeholder{/* Firefox 19+ */
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header div input:-ms-input-placeholder {
+    font-size: 13px;
+    color: #5F91EB;
+}
+.header div img{
+    position: absolute;
+    width: 18px;
+    height: 19px;
+    margin: 8px 0 0 246px;
+    z-index: 1;
+    cursor: pointer;
+}
+#headerSearch p{
+    font-size: 16px;
+    text-align: right;
+    margin: 0 16px 11px 0;
+}
+#headerSearch p a{
+    color: #ffffff;
+}

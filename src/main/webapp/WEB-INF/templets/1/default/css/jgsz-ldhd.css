@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+body{
+    background: none;
+}
+
+.schedule{
+    padding: 12px 0 0;
+}
+
+.schedule>ul{
+    margin: 28px;
+}
+.schedule>ul>li{
+    margin-top: 15px;
+    overflow: hidden;
+    list-style: outside;
+    list-style-position: inside;
+}
+
+.schedule>ul>li>a{
+    display: inline-block;
+    color: #333333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 470px;
+    line-height: 18px;
+}
+.schedule>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+.schedule>ul>li.bottom{
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.schedule>.limit{
+    margin-top: 22px;
+    background-color: #E9E9E9;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+}
+.schedule>.limit>a{
+    color: #666666;
+}
+.schedule>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.schedule>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.schedule>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.schedule>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid #BFBFBF;
+}
+.schedule>.limit>p{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    vertical-align: middle;
+    line-height: 21px;
+    text-align: center;
+    margin-left: 6px;
+}
+.schedule>.limit>p>img{
+    width: 6px;
+    height: 10px;
+}

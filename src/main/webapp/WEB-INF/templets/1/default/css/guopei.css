@@ -1,0 +1,136 @@
+body{
+    background-image: none;
+    background-color: #F8F8F8;
+}
+body>img{
+    width: 100%;
+    min-width: 996px;
+}
+.main-box{
+    width: 996px;
+    margin: 0 auto;
+}
+.main-box>.content-box{
+    background-color: #fff;
+}
+.main-box>.content-box>.title-yqtt{
+    width: 996px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-bottom: 1px solid #D8D8D8;
+}
+.main-box .content-box .title-yqtt a{
+    color: #333333;
+}
+.main-box>.content-box .title-yqtt p{
+    padding-bottom: 7px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.main-box>.content-box .title-yqtt .more{
+    float: right;
+}
+.main-box .content-box .jiange{
+    height: 20px;
+    background-color: #F8F8F8;
+}
+.main-box>.content-box>ul{
+    width: 945px;
+    overflow: hidden;
+    margin: 11px auto 0;
+    padding: 0 7px 28px 8px;
+}
+.main-box>.content-box>ul:first-child{
+    margin-top: 7px;
+}
+.main-box>.content-box>ul{
+    list-style: none;
+}
+.main-box>.content-box>ul>li{
+    margin-top: 15px;
+    color: #333333;
+    overflow: hidden;
+}
+.main-box>.content-box>ul>li>a{
+    width: 620px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+    line-height: 18px;
+}
+.main-box>.content-box>ul>li>.date{
+    float: right;
+}
+.main-box .content-box .vedio-new li{
+    display: inline-block;
+    width: 30%;
+}
+.main-box .content-box .vedio-new li+li{
+    margin-left: 41px;
+}
+.main-box .content-box .vedio-new li a,
+.main-box .content-box .pic-new li a,
+.main-box .content-box .tihui li a{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+.main-box .content-box .vedio-new li a .pic,
+.main-box .content-box .pic-new li a .pic{
+    width: 100%;
+    height: 166px;
+}
+.main-box .content-box .vedio-new li a .play{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.main-box .content-box .vedio-new li p.date{
+    margin-top: 5px;
+    float: none;
+}
+.main-box .content-box .vedio-new li p{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.main-box .content-box .pic-new li,
+.main-box .content-box .tihui li{
+    display: inline-block;
+    width: 24%;
+}
+.main-box .content-box .pic-new li+li,
+.main-box .content-box .tihui li+li{
+    margin-left: 7px;
+}
+.main-box .content-box .tihui li .pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.main-box .content-box .tihui li p.name-address{
+    color: #222222;
+    font-weight: bold;
+}
+.main-box .content-box .tihui li p.name-address+p{
+    margin-top: 5px;
+}
+.main-box .content-box .tihui li>div{
+    box-sizing: border-box;
+    vertical-align: top;
+    display: inline-block;
+    height: 50px;
+    overflow: hidden;
+    padding: 5px 0 0;
+}
+.main-box .content-box .tihui li a div{
+    height: 113px;
+    width: 100%;
+}
+.main-box .content-box .tihui li a div *{
+    white-space: normal;
+    font-size: 16px !important;
+}

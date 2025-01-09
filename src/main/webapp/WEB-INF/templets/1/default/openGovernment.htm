@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/openGovernment.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="main-box">
+        {ms:include filename=ga.htm/}
+        <nav class="nav">
+            <a href="{ms:global.url/}/9/index.html" class="one"><img src="{ms:globalskin.url/}/image/nav/home.png"/>首页</a>
+            <a href="{ms:global.url/}/8/index.html" class="two"><img src="{ms:globalskin.url/}/image/nav/institutions.png"/>机构设置</a>
+            <a href="{ms:global.url/}/7/index.html" class="three"><img src="{ms:globalskin.url/}/image/nav/edu-dynamic.png"/>教育动态</a>
+            <a href="#" class="four active"><img src="{ms:globalskin.url/}/image/nav/open-government.png"/>政府信息公开</a>
+            <a target="_blank" href="https://www.xzzwfw.gov.cn/portal/bszn/fwbm/list.shtml?siteId=1&type=1&serverType=2&dictOid=297e39606b66113d016b6646cead011e&bm=%E5%8C%BA%E6%95%99%E8%82%B2" class="eight"><img src="{ms:globalskin.url/}/image/nav/government_affairs_service.png"/>政务服务</a>
+            <a href="{ms:global.url/}/5/index.html" class="five"><img src="{ms:globalskin.url/}/image/nav/communication.png"/>互动交流</a>
+            <a href="{ms:global.url/}/4/index.html" class="six"><img src="{ms:globalskin.url/}/image/nav/literature-sharing.png"/>文献共享</a>
+            <a href="{ms:global.url/}/3/index.html" class="seven"><img src="{ms:globalskin.url/}/image/nav/subsite.png"/>专题子站</a>
+        </nav>
+        <p class="current-position">
+            当前位置:
+            {ms:channel type=self typeid=9}<a href="[field.typelink/]">[field:typetitle/]</a>{/ms:channel}
+            &gt;
+            {ms:channel type=self typeid=6}[field:typetitle/]{/ms:channel}
+            &gt;
+            <span>{ms:channel type=self typeid=25}[field:typetitle/]{/ms:channel}</span>
+        </p>
+        <div class="open-government-content">
+            <nav class="nav-left">
+                {ms:channel type=self typeid=25}
+                    <li class="active information"><img src="{ms:globalskin.url/}/image/openGovernment/information-on.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=348}
+                    <li class="information"><img src="{ms:globalskin.url/}/image/openGovernment/information-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=27}
+                    <li class="information"><img src="{ms:globalskin.url/}/image/openGovernment/information-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=28}
+                    <li class="announcement"><img src="{ms:globalskin.url/}/image/openGovernment/announcement-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=29}
+                    <li class="notice"><img src="{ms:globalskin.url/}/image/openGovernment/notice-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=30}
+                    <li class="audit"><img src="{ms:globalskin.url/}/image/openGovernment/audit-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=31}
+                    <li class="statistical"><img src="{ms:globalskin.url/}/image/openGovernment/statistical-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=32}
+                    <li class="law"><img src="{ms:globalskin.url/}/image/openGovernment/law-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=33}
+                    <li class="money" ><img src="{ms:globalskin.url/}/image/openGovernment/money-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=34}
+                    <li class="meeting"><img src="{ms:globalskin.url/}/image/openGovernment/meeting-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=35}
+                    <li class="personnel"><img src="{ms:globalskin.url/}/image/openGovernment/personnel-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=36}
+                    <li class="procurement"><img src="{ms:globalskin.url/}/image/openGovernment/procurement-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+            </nav>
+            <div class="iframe">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/openGovernment.js"></script>
+</html>

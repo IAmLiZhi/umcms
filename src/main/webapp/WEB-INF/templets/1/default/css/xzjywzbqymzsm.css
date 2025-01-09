@@ -1,0 +1,34 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+.main-box>.content-box{
+    background-color: #ffffff;
+    padding-top: 43px;
+    border: 1px solid #CCCCCC;
+    user-select: all;
+}
+.main-box>.content-box *{
+    user-select: auto;
+}
+.main-box>.content-box>h2{
+    margin: 10px auto;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+    text-align: center;
+}
+
+.main-box>.content-box>.content{
+    width: 822px;
+    margin: 30px auto;
+    padding-top: 2px;
+}
+.main-box>.content-box>.content *{
+    line-height: 1.75em;
+}
+
+
+.footer{
+    margin-top: 28px;
+}

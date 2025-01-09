@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    line-height: 1;
+    outline: none;
+}
+/* html *{
+-webkit-filter: grayscale(100%); /* webkit */
+-moz-filter: grayscale(100%); /*firefox*/
+-ms-filter: grayscale(100%); /*ie9*/
+-o-filter: grayscale(100%); /*opera*/
+filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+filter:gray;
+} */
+video{
+    display: block;
+}
+img{
+    border: 0;
+}
+button{
+    cursor: pointer;
+    border: 0;
+}
+body {
+   /*  background-color: #F2F2F2; */
+    background-image: url('../image//body-bg.png'); 
+ /* background-image: url('../image//bodybgg.png'); */
+    /* background-image: url('../image/qz100.png'); */
+    background-size: auto auto;
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+.main-box {
+    position: relative;
+}
+.main-box>.nav{
+    width: 100%;
+    overflow: hidden;
+    text-align: justify;
+}
+.main-box>.nav>a{
+    float: left;
+    width: 12.5%;
+    height: 45px;
+    text-align: center;
+    line-height: 50px;
+    background-image: url(../image//nav/nav-bg-unac.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-size: 17px;
+    color: #ffffff;
+    vertical-align: middle;
+}
+.main-box>.nav>a.one{
+    width: 10%;
+}
+.main-box>.nav>a.four {
+    width: 15%;
+}
+.main-box>.nav img{
+    vertical-align: middle;
+    border: 0;
+    vertical-align: auto\0;
+}
+.main-box>.nav>a.one>img{
+    width: 15px;
+    height: 15px;
+    margin-right: 16px;
+}
+.main-box>.nav>a.two>img{
+    width: 14px;
+    height: 14px;
+    margin-right: 14px;
+}
+.main-box>.nav>a.three>img{
+    width: 16px;
+    height: 16px;
+    margin-right: 13px;
+}
+.main-box>.nav>a.four>img{
+    width: 18px;
+    height: 16px;
+    margin-right: 12px;
+}
+.main-box>.nav>a.five>img{
+    width: 18px;
+    height: 16px;
+    margin-right: 12px;
+}
+.main-box>.nav>a.six>img{
+    width: 17px;
+    height: 15px;
+    margin-right: 12px;
+}
+.main-box>.nav>a.seven>img{
+    width: 16px;
+    height: 15px;
+    margin-right: 14px;
+}
+.main-box>.nav>a.eight>img{
+    width: 16px;
+    margin-right: 10px;
+}
+.main-box>.nav>a.active{
+    background-image: url(../image/nav/nav-bg-ac.png);
+}
+.main-box>.current-position{
+    color: #ffffff;
+    font-size: 12px;
+    padding: 6px 0;
+    margin-top: 11px;
+}
+.main-box>.current-position>a{
+    color: #ffffff;
+}
+.none{
+    display: none;
+}
+.inline-block{
+    display: inline-block;
+}
+.visibel{
+    visibility: hidden;
+}
+.print{
+    cursor: pointer;
+}
+.ga {
+    position: absolute;
+    top: 33px;
+    right: -140px;
+}
+.ga a {
+    display: block;
+}
+.ga a img {
+    width: 100px;
+}

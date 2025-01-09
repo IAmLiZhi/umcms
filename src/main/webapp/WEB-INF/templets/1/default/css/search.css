@@ -1,0 +1,153 @@
+.header .search{
+    display: none;
+}
+.main-box{
+    width: 996px;
+    margin: 31px auto 0;
+    overflow: hidden;
+}
+.main-box>.current-position,.main-box>.current-position>a{
+    font-size: 12px;
+    color: #ffffff;
+}
+.main-box>.order-timer{
+    width: 285px;
+    float: left;
+    background-color: #D8E8F8;
+    background-image: url(../image/index/search/budala.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
+    padding-bottom: 50px;
+}
+.main-box>.order-timer>p{
+    background-color: #7FBBF5;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 14px 0 14px 58px;
+}
+.main-box>.order-timer>.order+p{
+    margin-top: 56px;
+}
+.main-box>.order-timer>dl{
+    padding: 7px 0 0 58px;
+}
+.main-box>.order-timer>dl>dd{
+    font-size: 12px;
+    color: #666666;
+    margin-top: 14px;
+    cursor: pointer;
+}
+.main-box>.order-timer>dl>dd.active{
+    font-weight: bold;
+}
+.main-box>.search-content{
+    width: 711px;
+    float: left;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-left: 0;
+}
+.main-box>.search-content>.search-box{
+    margin-top: 26px;
+}
+.main-box>.search-content>.search-box>input{
+    width: 528px;
+    height: 36px;
+    border: 1px solid #666666;
+    font-size: 17px;
+    padding-left: 10px;
+    margin-right: 23px;
+    vertical-align: middle;
+}
+.main-box>.search-content>.search-box>button{
+    width: 85px;
+    height: 36px;
+    background-color: #5097ED;
+    color: #ffffff;
+    vertical-align: middle;
+}
+.main-box>.search-content>.search-result{
+    font-size: 12px;
+    color: #333333;
+    text-align: left;
+    margin: 14px 0 28px 55px;
+}
+.main-box>.search-content>.search-result>span{
+    color: #FF6161;
+}
+.main-box>.search-content>.news{
+    width: 634px;
+    margin: 0 auto;
+    text-align: left;
+    color: #333333;
+}
+.main-box>.search-content>.news>li{
+    margin-top: 35px;
+}
+.main-box>.search-content>.news>li:first-child{
+    margin: 0;
+}
+.main-box>.search-content>.news>li>.every-news-title{
+    font-size: 17px;
+}
+.main-box>.search-content>.news>li>.every-news-content{
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 13px;
+    margin-top: 14px;
+    line-height: 20px;
+}
+.main-box>.search-content>.news>li>.every-news-time{
+    font-size: 12px;
+    margin-top: 14px;
+    color: #268706;
+}
+.main-box>.search-content>.limit{
+    margin-top: 54px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.main-box>.search-content>.limit>a{
+    color: #666666;
+}
+.main-box>.search-content>.limit>span{
+    display: inline-block;
+}
+.main-box>.search-content>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.main-box>.search-content>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.main-box>.search-content>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.main-box>.search-content>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.main-box>.search-content>.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.main-box>.search-content>.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+}

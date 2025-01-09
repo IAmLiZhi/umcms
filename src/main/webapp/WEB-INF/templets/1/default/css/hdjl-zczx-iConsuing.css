@@ -1,0 +1,188 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+.main-box>.content-box{
+    overflow: hidden;
+}
+.main-box>.content-box>.left{
+    width: 228px;
+    height: 711px;
+    float: left;
+    background-color: #F2F5F7;
+}
+.main-box>.content-box>.left>p{
+    border-left: 6px solid #5592EF;
+    margin-top: 17px;
+    padding: 10px 0 10px 20px;
+    color: #568BEB;
+    font-size: 17px;
+}
+.main-box>.content-box>.left>p>img{
+    width: 26px;
+    height: 23px;
+    vertical-align: middle;
+    margin-right: 14px;
+}
+.main-box>.content-box>.left>div{
+    width: 179px;
+    margin: 28px auto 0;
+}
+.main-box>.content-box>.left>div>p{
+    font-size: 14px;
+    color: #333333;
+    line-height: 25px;
+}
+.main-box>.content-box>.right{
+    width: 768px;
+    height: 711px;
+    background-color: #ffffff;
+    padding: 0 32px;
+    float: left;
+    border: 1px solid #cccccc;
+    border-left: 0;
+}
+.main-box>.content-box>.right>div{
+    border-bottom: 1px solid #579AF5;
+    margin: 24px 0 28px;
+}
+.main-box>.content-box>.right>div>p{
+    
+    margin-left: 26px;
+    border-bottom: 2px solid #579AF5;
+    padding-bottom: 6px;
+    font-size: 17px;
+    color: #579AF5;
+}
+.main-box>.content-box>.right>div>p>img{
+    width: 19px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 13px;
+}
+.main-box>.content-box>.right>form{
+    margin-left: 30px;
+}
+.main-box>.content-box>.right>form .small{
+    width: 178px;
+    height: 28px;
+    padding: 8px 0 8px 10px;
+    margin-left: 30px;
+    border: 1px solid #BBBBBB;
+    font-size: 13px;
+}
+.main-box>.content-box>.right>form>div>span{
+    font-size: 13px;
+    color: #333333;
+}
+.main-box>.content-box>.right>form>.name-phone>.inline-block{
+    margin-left: 83px;
+}
+.main-box>.content-box>.right>form>.id>span{
+    margin-left: -13px;
+}
+.main-box>.content-box>.right>form>.title>input{
+    width: 525px;
+    height: 28px;
+    padding: 8px 0 8px 10px;
+    margin-left: 30px;
+}
+.main-box>.content-box>.right>form>.content>textarea{
+    width: 525px;
+    height: 120px;
+    margin-left: 30px;
+    vertical-align: top;
+    padding: 5px;
+}
+.main-box>.content-box>.right>form>.upload>button{
+    width: 85px;
+    height: 28px;
+    border: 1px solid #BBBBBB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: #F4F4F4;
+    color: #333333;
+    font-size: 13px;
+    margin-left: 13px;
+}
+.main-box>.content-box>.right>form>.upload>.file{
+    width: 85px;
+    height: 28px;
+    margin-left: -85px;
+    opacity: 0;
+}
+
+.main-box>.content-box>.right>form>.upload>.file-prompt{
+    margin-left: 17px;
+    color: #FF5959;
+    font-size: 12px;
+}
+.main-box>.content-box>.right>form>.upload>p{
+    margin: 5px 0 0 83px;
+    color: #666666;
+    font-size: 12px;
+}
+.main-box>.content-box>.right>form>.upload>p>span{
+    color: #FF5959;
+}
+.main-box>.content-box>.right>form>button{
+    width: 192px;
+    height: 36px;
+    background-color: #5592EF;
+    border: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: #ffffff;
+    font-size: 17px;
+    margin: 19px 0 0 83px;
+}
+.main-box>.content-box>.right>form>div>.prompt{
+    padding: 5px 0;
+    overflow: hidden;
+    margin: 0 100px;
+}
+.main-box>.content-box>.right>form>div>.prompt>span{
+    color: #FF5959;
+    font-size: 13px;
+}
+.main-box>.content-box>.right>form>.name-phone>.prompt>.phone{
+    float: right;
+}
+.mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;  
+}
+.mask>.true,.mask>.false{
+    width: 356px;
+    height: 171px;
+    text-align: center;
+    margin: 245px auto 0;
+    background-color: #ffffff;
+}
+.mask>.true>img,
+.mask>.false>img
+{
+    width: 61px;
+    height: 61px;
+    margin: 29px 0 19px;
+}
+.mask>.true>p,
+.mask>.false>p
+{
+    font-size: 17px;
+    color: #666666;
+}
+.footer{
+    margin-top: 63px;
+    cursor: pointer;
+}

@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+body{
+    background: none;
+}
+.announcement>ul{
+    margin: 28px;
+}
+.announcement>ul>li{
+    margin-top: 17px;
+    overflow: hidden;
+    list-style: outside;
+    list-style-position: inside;
+}
+
+.announcement>ul>li>a{
+    display: inline-block;
+    color: #333333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 470px;
+}
+.announcement>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+.announcement>ul>li.bottom{
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.announcement>.limit{
+    margin-top: -2px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.announcement>.limit>a{
+    color: #666666;
+}
+.announcement>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.announcement>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.announcement>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.announcement>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.announcement>.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.announcement>.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+}

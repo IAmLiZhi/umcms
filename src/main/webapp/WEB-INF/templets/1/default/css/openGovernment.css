@@ -1,0 +1,388 @@
+.header{
+    height: 147px;
+}
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+
+.main-box>.open-government-content{
+    overflow: hidden;
+}
+.main-box>.open-government-content>nav{
+    float: left;
+    width: 228px;
+    height: 962px;
+    background-color: #F2F5F7;
+    font-size: 17px;
+    color: #666666; 
+}
+.main-box>.open-government-content>nav>li{
+    border-left: 7px solid transparent;
+    padding: 30px 0; 
+    font-size: 17px;
+    color: #666666;
+    cursor: pointer;
+}
+.main-box>.open-government-content>nav>li>img{
+    vertical-align: middle;
+}
+.main-box>.open-government-content>nav>li.active{
+    background-color: #ffffff;
+    color: #568BEB;
+    border-left-color: #5592EF;
+}
+.main-box>.open-government-content>nav>li.information>img{
+    width: 23px;
+    height: 19px;
+    margin: 0 17px 0 26px;
+}
+.main-box>.open-government-content>nav>li.announcement>img{
+    width: 16px;
+    height: 21px;
+    margin: 0 22px 0 30px;
+}
+.main-box>.open-government-content>nav>li.notice>img{
+    width: 23px;
+    height: 20px;
+    margin: 0 17px 0 28px;
+}
+.main-box>.open-government-content>nav>li.audit>img{
+    width: 17px;
+    height: 21px;
+    margin: 0 20px 0 29px;
+}
+.main-box>.open-government-content>nav>li.statistical>img{
+    width: 20px;
+    height: 19px;
+    margin: 0 16px 0 30px;
+}
+.main-box>.open-government-content>nav>li.law>img{
+    width: 23px;
+    height: 23px;
+    margin: 0 18px 0 26px;
+}
+.main-box>.open-government-content>nav>li.money>img{
+    width: 21px;
+    height: 18px;
+    margin: 0 19px 0 27px;
+}
+.main-box>.open-government-content>nav>li.meeting>img{
+    width: 18px;
+    height: 18px;
+    margin: 0 21px 0 28px;
+}
+.main-box>.open-government-content>nav>li.personnel>img{
+    width: 17px;
+    height: 17px;
+    margin: 0 20px 0 31px;
+}
+.main-box>.open-government-content>nav>li.procurement>img{
+    width: 19px;
+    height: 18px;
+    margin: 0 19px 0 28px;
+}
+.main-box>.open-government-content>.iframe{
+    width: 768px;
+    height: 962px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-left: 0;
+    float: left;
+}
+.main-box>.open-government-content>.iframe>iframe{
+    width: 100%;
+    height: 100%;
+}
+/* .main-box>.open-government-content>.information,
+.main-box>.open-government-content>.announcement,
+.main-box>.open-government-content>.notice,
+.main-box>.open-government-content>.audit,
+.main-box>.open-government-content>.statistical,
+.main-box>.open-government-content>.law,
+.main-box>.open-government-content>.money,
+.main-box>.open-government-content>.meeting,
+.main-box>.open-government-content>.personnel,
+.main-box>.open-government-content>.procurement
+{
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-left: 0;
+    float: left;
+    width: 768px;
+    height: 800px;
+}
+.main-box>.open-government-content>.information>.ul-nav
+{
+    margin: 17px 43px 0 21px;
+    border-bottom: 1px solid #579AF5;
+}
+.main-box>.open-government-content>.information>.ul-nav>p
+{
+    display: inline-block;
+    border-bottom: 2px solid #579AF5;
+    padding: 0 3px 7px 0;
+    margin-left: 27px;
+    font-size: 17px;
+    color: #579AF5
+}
+.main-box>.open-government-content>.information>.ul-nav>p>img
+{
+    width: 16px;
+    height: 19px;
+    margin-right: 14px;
+}
+.main-box>.open-government-content>.information>.content
+{
+    margin: 25px 37px 14px 48px;
+    height: 600px;
+    overflow-y: scroll;
+}
+.main-box>.open-government-content>.information>.content *{
+    line-height: 1.75em;
+}
+
+.main-box>.open-government-content>.information>.button
+{
+    text-align: center;
+}
+.main-box>.open-government-content>.information>.button>a:first-child
+{
+    margin-right: 21px;
+}
+.main-box>.open-government-content>.information>.button>a>button
+{
+    width: 157px;
+    height: 36px;
+    font-size: 17px;
+    color: #ffffff;
+    border: 0;
+    background-color: #5496CC;
+}
+.main-box>.open-government-content>.information>.button>a:first-child>button
+{
+    background-color: #FF9F42;
+}
+.main-box>.open-government-content>.announcement,
+.main-box>.open-government-content>.notice,
+.main-box>.open-government-content>.audit,
+.main-box>.open-government-content>.statistical,
+.main-box>.open-government-content>.law,
+.main-box>.open-government-content>.money,
+.main-box>.open-government-content>.meeting,
+.main-box>.open-government-content>.personnel,
+.main-box>.open-government-content>.procurement{
+    padding: 12px 0 0;
+} */
+
+/* .main-box>.open-government-content>.announcement>hr,
+.main-box>.open-government-content>.notice>hr,
+.main-box>.open-government-content>.audit>hr,
+.main-box>.open-government-content>.statistical>hr,
+.main-box>.open-government-content>.law>hr,
+.main-box>.open-government-content>.money>hr,
+.main-box>.open-government-content>.meeting>hr,
+.main-box>.open-government-content>.personnel>hr,
+.main-box>.open-government-content>.procurement>hr
+{
+    background-color: #E5E5E5;
+    width: 683px;
+    height: 1px;
+    border: 0;
+    margin-left: 26px;
+} */
+/* .main-box>.open-government-content>.announcement>ul,
+.main-box>.open-government-content>.notice>ul,
+.main-box>.open-government-content>.audit>ul,
+.main-box>.open-government-content>.statistical>ul,
+.main-box>.open-government-content>.law>ul,
+.main-box>.open-government-content>.money>ul,
+.main-box>.open-government-content>.meeting>ul,
+.main-box>.open-government-content>.personnel>ul,
+.main-box>.open-government-content>.procurement>ul
+{
+    margin: 28px;
+}
+.main-box>.open-government-content>.announcement>ul>li,
+.main-box>.open-government-content>.notice>ul>li,
+.main-box>.open-government-content>.audit>ul>li,
+.main-box>.open-government-content>.statistical>ul>li,
+.main-box>.open-government-content>.law>ul>li,
+.main-box>.open-government-content>.money>ul>li,
+.main-box>.open-government-content>.meeting>ul>li,
+.main-box>.open-government-content>.personnel>ul>li,
+.main-box>.open-government-content>.procurement>ul>li
+{
+    margin-top: 17px;
+    overflow: hidden;
+    list-style: outside;
+    list-style-position: inside;
+}
+
+.main-box>.open-government-content>.announcement>ul>li>a,
+.main-box>.open-government-content>.notice>ul>li>a,
+.main-box>.open-government-content>.audit>ul>li>a,
+.main-box>.open-government-content>.statistical>ul>li>a,
+.main-box>.open-government-content>.law>ul>li>a,
+.main-box>.open-government-content>.money>ul>li>a,
+.main-box>.open-government-content>.meeting>ul>li>a,
+.main-box>.open-government-content>.personnel>ul>li>a,
+.main-box>.open-government-content>.procurement>ul>li>a
+{
+    display: inline-block;
+    color: #333333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 470px;
+}
+.main-box>.open-government-content>.announcement>ul>li>.date,
+.main-box>.open-government-content>.notice>ul>li>.date,
+.main-box>.open-government-content>.audit>ul>li>.date,
+.main-box>.open-government-content>.statistical>ul>li>.date,
+.main-box>.open-government-content>.law>ul>li>.date,
+.main-box>.open-government-content>.money>ul>li>.date,
+.main-box>.open-government-content>.meeting>ul>li>.date,
+.main-box>.open-government-content>.personnel>ul>li>.date,
+.main-box>.open-government-content>.procurement>ul>li>.date
+{
+    float: right;
+    color: #999999;
+}
+.main-box>.open-government-content>.announcement>ul>li.bottom,
+.main-box>.open-government-content>.notice>ul>li.bottom,
+.main-box>.open-government-content>.audit>ul>li.bottom,
+.main-box>.open-government-content>.statistical>ul>li.bottom,
+.main-box>.open-government-content>.law>ul>li.bottom,
+.main-box>.open-government-content>.money>ul>li.bottom,
+.main-box>.open-government-content>.meeting>ul>li.bottom,
+.main-box>.open-government-content>.personnel>ul>li.bottom,
+.main-box>.open-government-content>.procurement>ul>li.bottom
+{
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.main-box>.open-government-content>.announcement>.limit,
+.main-box>.open-government-content>.notice>.limit,
+.main-box>.open-government-content>.audit>.limit,
+.main-box>.open-government-content>.statistical>.limit,
+.main-box>.open-government-content>.law>.limit,
+.main-box>.open-government-content>.money>.limit,
+.main-box>.open-government-content>.meeting>.limit,
+.main-box>.open-government-content>.personnel>.limit,
+.main-box>.open-government-content>.procurement>.limit
+{
+    margin-top: -2px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.main-box>.open-government-content>.announcement>.limit>a,
+.main-box>.open-government-content>.notice>.limit>a,
+.main-box>.open-government-content>.audit>.limit>a,
+.main-box>.open-government-content>.statistical>.limit>a,
+.main-box>.open-government-content>.law>.limit>a,
+.main-box>.open-government-content>.money>.limit>a,
+.main-box>.open-government-content>.meeting>.limit>a,
+.main-box>.open-government-content>.personnel>.limit>a,
+.main-box>.open-government-content>.procurement>.limit>a
+{
+    color: #666666;
+}
+.main-box>.open-government-content>.announcement>.limit>span,
+.main-box>.open-government-content>.notice>.limit>span,
+.main-box>.open-government-content>.audit>.limit>span,
+.main-box>.open-government-content>.statistical>.limit>span,
+.main-box>.open-government-content>.law>.limit>span,
+.main-box>.open-government-content>.money>.limit>span,
+.main-box>.open-government-content>.meeting>.limit>span,
+.main-box>.open-government-content>.personnel>.limit>span,
+.main-box>.open-government-content>.procurement>.limit>span
+{
+    display: inline-block;
+}
+.main-box>.open-government-content>.announcement>.limit>.pagenum,
+.main-box>.open-government-content>.notice>.limit>.pagenum,
+.main-box>.open-government-content>.audit>.limit>.pagenum,
+.main-box>.open-government-content>.statistical>.limit>.pagenum,
+.main-box>.open-government-content>.law>.limit>.pagenum,
+.main-box>.open-government-content>.money>.limit>.pagenum,
+.main-box>.open-government-content>.meeting>.limit>.pagenum,
+.main-box>.open-government-content>.personnel>.limit>.pagenum,
+.main-box>.open-government-content>.procurement>.limit>.pagenum
+{
+    margin: 0 35px 0 17px;
+}
+.main-box>.open-government-content>.announcement>.limit>.prev,
+.main-box>.open-government-content>.notice>.limit>.prev,
+.main-box>.open-government-content>.audit>.limit>.prev,
+.main-box>.open-government-content>.statistical>.limit>.prev,
+.main-box>.open-government-content>.law>.limit>.prev,
+.main-box>.open-government-content>.money>.limit>.prev,
+.main-box>.open-government-content>.meeting>.limit>.prev,
+.main-box>.open-government-content>.personnel>.limit>.prev,
+.main-box>.open-government-content>.procurement>.limit>.prev
+{
+    margin: 0 13px 0 18px;
+}
+.main-box>.open-government-content>.announcement>.limit>.last,
+.main-box>.open-government-content>.notice>.limit>.last,
+.main-box>.open-government-content>.audit>.limit>.last,
+.main-box>.open-government-content>.statistical>.limit>.last,
+.main-box>.open-government-content>.law>.limit>.last,
+.main-box>.open-government-content>.money>.limit>.last,
+.main-box>.open-government-content>.meeting>.limit>.last,
+.main-box>.open-government-content>.personnel>.limit>.last,
+.main-box>.open-government-content>.procurement>.limit>.last
+{
+    margin: 0 38px 0 18px;
+}
+.main-box>.open-government-content>.announcement>.limit>span>input,
+.main-box>.open-government-content>.notice>.limit>span>input,
+.main-box>.open-government-content>.audit>.limit>span>input,
+.main-box>.open-government-content>.statistical>.limit>span>input,
+.main-box>.open-government-content>.law>.limit>span>input,
+.main-box>.open-government-content>.money>.limit>span>input,
+.main-box>.open-government-content>.meeting>.limit>span>input,
+.main-box>.open-government-content>.personnel>.limit>span>input,
+.main-box>.open-government-content>.procurement>.limit>span>input
+{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.main-box>.open-government-content>.announcement>.limit>.img-box,
+.main-box>.open-government-content>.notice>.limit>.img-box,
+.main-box>.open-government-content>.audit>.limit>.img-box,
+.main-box>.open-government-content>.statistical>.limit>.img-box,
+.main-box>.open-government-content>.law>.limit>.img-box,
+.main-box>.open-government-content>.money>.limit>.img-box,
+.main-box>.open-government-content>.meeting>.limit>.img-box,
+.main-box>.open-government-content>.personnel>.limit>.img-box,
+.main-box>.open-government-content>.procurement>.limit>.img-box
+{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.main-box>.open-government-content>.announcement>.limit>.img-box>img,
+.main-box>.open-government-content>.notice>.limit>.img-box>img,
+.main-box>.open-government-content>.audit>.limit>.img-box>img,
+.main-box>.open-government-content>.statistical>.limit>.img-box>img,
+.main-box>.open-government-content>.law>.limit>.img-box>img,
+.main-box>.open-government-content>.money>.limit>.img-box>img,
+.main-box>.open-government-content>.meeting>.limit>.img-box>img,
+.main-box>.open-government-content>.personnel>.limit>.img-box>img,
+.main-box>.open-government-content>.procurement>.limit>.img-box>img
+{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+} */

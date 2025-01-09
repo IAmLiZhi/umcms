@@ -1,0 +1,21 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+.zyjyycrjyc>.content-box{
+    padding: 26px;
+    background-color: #ffffff;
+    min-height: 458px;
+}
+.zyjyycrjyc>.content-box>.titlebox{
+    border-bottom: 1px solid #579AF5;
+}
+.zyjyycrjyc>.content-box>.titlebox>p{
+    display: inline-block;
+    line-height: 24px;
+    color: #579AF5;
+    border-bottom: 2px solid #579AF5;
+}
+.zyjyycrjyc>.content-box>.content{
+    margin-top: 20px;
+}

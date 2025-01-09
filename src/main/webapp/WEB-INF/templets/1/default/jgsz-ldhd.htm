@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/jgsz-jytld.css">
+</head>
+<body>
+    <div class="boss">
+        <ul>
+            {ms:arclist size=6 flag=p orderby=sort order=desc typeid=15}
+                <li>
+                    <div class="img">
+                        <img src="[field.litpic/]" alt="">
+                    </div>
+                    <dl class="info">
+                        <dd class="name">[field.title/]</dd>
+                        <dd class="post">[field.descrip/]</dd>
+                    </dl>
+                    <!-- <div class="button">
+                        <a href="[field.link/]" target="_blank"><button class="personal-resume">个人简历</button></a>
+                        <button class="important-activities">重要活动</button>
+                    </div> -->
+                </li>
+            {/ms:arclist}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/guopei-dianxing.css">
+</head>
+<body>
+    <img src="{ms:globalskin.url/}/image/guopei/guopei.png" alt="">
+    <div class="main-box">
+        {ms:include filename=ga.htm/}
+        <p class="current-position">
+            当前位置:
+            {ms:channel type=self typeid=338}<a href="[field.typelink/]">首页</a>{/ms:channel}
+            &gt;
+            {ms:channel type=self typeid=342}[field:typetitle/]{/ms:channel}
+        </p>
+        <div class="content-box">
+            <div class="desc">
+                {ms:channel type=self typeid=342}
+                    <p class="inline-block">[field:typetitle/]</p>
+                {/ms:channel}
+            </div>
+            <ul>
+                {ms:arclist size=18 flag=w orderby=date order=desc typeid=342 ispaging=true}
+                    <li><a href="[field.link/]" target="_blank" class="title">[field./]</a><span class="date">[field.date fmt=yy-MM-dd/]</span></li>
+                {/ms:arclist}
+            </ul>
+            <div class="limit">
+            <span>共{ms:page.rcount/}条信息</span><span class="pagenum">页数:{ms:page.cur/}/{ms:page.total/} </span><a href="{ms:page.index/}">首页</a><a class="prev" href="{ms:page.pre/}">上一页</a><a href="{ms:page.next/}">下一页</a><a class="last" href="{ms:page.last/}">末页</a><span>跳转至第 <input type="text" class="goPage"> 页</span><p class="inline-block img-box go"><img src="{ms:globalskin.url/}/image/index/search/go.png" alt=""></p> 
+        </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/jydt-importantSpeech.js"></script>
+</html>

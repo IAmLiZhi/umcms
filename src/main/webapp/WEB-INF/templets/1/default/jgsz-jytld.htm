@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/jgsz-jytld.css">
+</head>
+<body>
+    <div class="boss">
+        <ul>
+            {ms:arclist size=99 flag=p orderby=sort order=desc typeid=16}
+                <li>
+                    <div class="img">
+                        <img src="[field.litpic/]" alt="">
+                    </div>
+                    <dl class="info">
+                        <dd class="name">[field.title/]</dd>
+                        <dd class="post">[field.descrip/]</dd>
+                    </dl>
+                </li>
+            {/ms:arclist}
+        </ul>
+        <!-- <div class="limit">
+            <span>共{ms:page.rcount/}条信息</span><span class="pagenum">页数:{ms:page.cur/}/{ms:page.total/} </span><a href="{ms:page.index/}">首页</a><a
+                class="prev" href="{ms:page.pre/}">上一页</a><a href="{ms:page.next/}">下一页</a><a class="last" href="{ms:page.last/}">末页</a><span>跳转至第
+                <input type="text" class="goPage"> 页</span>
+            <p class="inline-block img-box go"><img src="{ms:globalskin.url/}/image/index/search/go.png" alt=""></p>
+        </div> -->
+    </div>
+</body>
+<script>
+    $(function(){
+        // $.hiddenLimit({
+        //     parent: '.boss',
+        //     length: 6,
+        // });
+        var $parentDocument = $(window.parent.document);
+        var $mainBox = $parentDocument.children('html').children('body').children('.main-box');
+        var $nav = $mainBox.children('.education-content')
+        // $('button.important-activities').click(function(){
+		// 	var $nav = $mainBox.children('.education-content').children('nav');
+        //     var $img = $nav.children('li.boss').removeClass('active').children('img');
+		// 	var $src = $img.attr('src');
+        //     $img.attr('src', $src.replace(/-on/, '-out'));
+        //     var $activeImg = $nav.children('li.boss-active').addClass('active').children('img');
+        //     var $activeSrc = $activeImg.attr('src');
+        //     $activeImg.attr('src', $activeSrc.replace(/-out/, '-on'));
+        //     $mainBox.children('.current-position').children('span').text('领导活动');
+        //     $mainBox.children('.education-content').children('.iframe').children('iframe').attr('src', './15/index.html');
+        // });
+        // $('.go').click($.goPage);
+        // $('.go').click($.goPage);
+        var $allLi = $('.boss ul li')
+        $nav.children('.nav-left').css('height', ($allLi.length * 121) +'px')
+        $nav.children('.iframe').css('height', ($allLi.length * 121) +'px')
+    })
+</script>
+</html>

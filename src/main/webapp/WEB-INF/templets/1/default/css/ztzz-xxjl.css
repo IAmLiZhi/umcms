@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+body{
+    background: none;
+}
+.ul-box>ul{
+    margin: 23px 23px 23px 22px; 
+}
+.ul-box>ul>li{
+    margin-top: 15px;
+    overflow: hidden;
+    list-style: outside;
+    list-style-position: inside;
+    font-size: 16px;
+}
+.ul-box>ul>li:first-child{
+    margin: 0;
+}
+.ul-box>ul>li>a{
+    color: #333333;
+    width: 464px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 18px;
+}
+.ul-box>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+.ul-box>ul>li.bottom{
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.ul-box>.limit{
+    margin-top: 17px;
+    background-color: #E9E9E9;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+}
+.ul-box>.limit>a{
+    color: #666666;
+}
+.ul-box>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.ul-box>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.ul-box>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.ul-box>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid #BFBFBF;
+}
+.ul-box>.limit>p{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    vertical-align: middle;
+    line-height: 21px;
+    text-align: center;
+    margin-left: 6px;
+    display: inline-block;
+    cursor: pointer;
+}
+.ul-box>.limit>p>img{
+    width: 6px;
+    height: 10px;
+}

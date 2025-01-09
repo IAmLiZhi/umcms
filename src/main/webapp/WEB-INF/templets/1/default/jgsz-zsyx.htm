@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/jgsz-zsyx.css">
+</head>
+<body>
+    <div class="university">
+        <p>院校列表<span>（点击查看院校介绍）</span></p>
+        <ul>
+            {ms:arclist size=100 flag=h orderby=date order=desc typeid=12}
+                <li><a href="[field.link/]" target="_blank">[field.title/]</a></li>
+            {/ms:arclist}
+        </ul>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('ul li').lastLi();
+    })
+</script>
+</html>

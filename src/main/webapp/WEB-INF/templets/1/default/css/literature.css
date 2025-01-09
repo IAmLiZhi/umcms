@@ -1,0 +1,98 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+.main-box>.content-box{
+    overflow: hidden;
+}
+.main-box>.content-box>.left{
+    width: 327px;
+    height: 861px;
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid #C5C5C5;
+}
+.main-box>.content-box>.left>img{
+    width: 325px;
+}
+.main-box>.content-box>.left>ul{
+    width: 273px;
+    margin: 23px auto 16px;
+}
+.main-box>.content-box>.left>ul>li{
+    margin-top: 29px;
+    overflow: hidden;
+}
+.main-box>.content-box>.left>ul>li:first-child{
+    margin: 0;
+}
+
+.main-box>.content-box>.left>ul>li>span{
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: #5097ED;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-right: 10px;
+}
+.main-box>.content-box>.left>ul>li>a{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #222222;
+    width: 259px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-box>.content-box>.left>ul>li>.more{
+    float: right;
+    color: #5F91EB;
+    width: 56px;
+}
+.main-box>.content-box>.right{
+    width: 657px;
+    height: 861px;
+    margin-left: 9px;
+    float: left;
+    border: 1px solid #CCCCCC;
+    background-color: #ffffff;
+}
+.main-box>.content-box>.right>.ul-nav{
+    width: 591px;
+    margin: 26px auto 0;
+    border-bottom: 1px solid #579AF5;
+}
+.main-box>.content-box>.right>.ul-nav p{
+    color: #666666;
+    font-size: 17px;
+    padding: 0 0 7px 0;
+    border-bottom: 2px solid transparent;
+    margin-left: 21px;
+}
+
+.main-box>.content-box>.right>.ul-nav p>img{
+    width: 20px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 11px;
+}
+.main-box>.content-box>.right>.ul-nav p.two{
+    padding: 0 0 9px 0;
+    margin-left: 42px;
+}
+.main-box>.content-box>.right>.ul-nav p.active{
+    color: #579AF5;
+    border-bottom-color: #579AF5;
+}
+.main-box>.content-box>.right>.iframe{
+    height: 804px;
+}
+.main-box>.content-box>.right>.iframe>iframe{
+    width: 100%;
+    height: 100%;
+}

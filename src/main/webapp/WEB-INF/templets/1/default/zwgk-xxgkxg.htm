@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/zwgk-xxgkxg.css">
+</head>
+<body>
+    <div class="information">
+        <div class="ul-nav">
+            <p><img src="{ms:globalskin.url/}/image/connection/leave-word-blue.png" alt="">信息公开指南</p>
+        </div>
+        <div class="content">
+            {ms:arclist size=1 flag=w,h orderby=date order=desc typeid=25}
+                [field.content/]
+            {/ms:arclist}
+        </div>
+        <div class="button">
+            <a href="{ms:global.url/}/6/26/index.html" target="_blank"><button>信息公开目录</button></a>
+            <!-- <a target="_blank" href="{ms:global.url/}/6/27/index.html"><button>信息公开年报</button></a> -->
+        </div>
+    </div>
+</body>
+</html>

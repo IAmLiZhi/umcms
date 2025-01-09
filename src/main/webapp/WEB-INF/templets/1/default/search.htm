@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/search.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="main-box">
+        <p class="current-position">
+            当前位置:
+            {ms:channel type=self typeid=9}<a href="[field.typelink/]">[field:typetitle/]</a>{/ms:channel}
+            &gt;
+            搜索
+            &gt;
+            <span>全部</span>
+        </p>
+        <div class="order-timer">
+            <p>排序方式</p>
+            <dl class="order">
+                <dd class="active down">按时间降序</dd>
+                <dd class="up">按时间升序</dd>
+            </dl>
+            <p class="">时间范围</p>
+            <dl class="timer">
+                <dd class="active">全部</dd>
+                <dd>一年内</dd>
+                <dd>一个月内</dd>
+                <dd>一周内</dd>
+            </dl>
+        </div>
+        <div class="search-content">
+            <div class="search-box">
+                <input type="text"><button id="searchBtn">搜索</button>
+            </div>
+            <p class="search-result none">为您找到相关结果 <span></span> 条</p>
+            <ul class="news none">
+            </ul>
+            <div class="limit none">
+                <p class="inline-block allNum">共<span></span>条信息</p><p class="pagenum inline-block">页数:<span class="current"></span>/<span class="all"></span> </p><a href="javascript:;" id="home">首页</a><a
+                    class="prev" href="javascript:;">上一页</a><a href="javascript:;" id="next">下一页</a><a class="last" href="javascript:;">末页</a><span>跳转至第
+                    <input type="text" class="go"> 页</span>
+                <p class="inline-block img-box"><img src="{ms:globalskin.url/}/image/index/search/go.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/search.js"></script>
+</html>

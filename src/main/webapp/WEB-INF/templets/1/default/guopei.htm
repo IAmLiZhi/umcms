@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/guopei.css">
+</head>
+<body>
+    <img src="{ms:globalskin.url/}/image/guopei/guopei.png" alt="">
+    <div class="main-box">
+        {ms:include filename=ga.htm/}
+        <div class="content-box">
+            <div class="title-yqtt">
+                {ms:channel type=self typeid=339}
+                    <a href="[field.typelink/]"><p class="inline-block">[field:typetitle/]</p></a>
+                    <a href="[field.typelink/]" class="more">查看更多&gt;&gt;</a>
+                {/ms:channel}
+            </div>
+            <ul>
+                {ms:arclist flag=w,h size=8 typeid=339 orderby=date order=desc}
+                    <li><a href="[field.link/]" target="_blank">[field.title/]</a><span class="date">[field.date fmt=yyyy-MM-dd/]</span></li>
+                {/ms:arclist}
+            </ul>
+            <div class="jiange"></div>
+            <div class="title-yqtt">
+                {ms:channel type=self typeid=340}
+                    <a href="[field.typelink/]"><p class="inline-block">[field:typetitle/]</p></a>
+                    <a href="[field.typelink/]" class="more">查看更多&gt;&gt;</a>
+                {/ms:channel}
+            </div>
+            <ul class="vedio-new">
+                {ms:arclist flag=w,h size=3 order=desc orderby=date typeid=340}
+                    <li>
+                        <a href="[field.link/]" target="_blank">
+                            <img class="pic" src="[field.litpic/]" alt="">
+                            <img src="{ms:globalskin.url/}/image/play.png" alt="" class="play">
+                        </a>
+                        <p>[field.title/]</p>
+                        <p class="date">[field.date fmt=yyyy-MM-dd/]</p>
+                    </li>
+                {/ms:arclist}
+            </ul>
+            <div class="jiange"></div>
+            <div class="title-yqtt">
+                {ms:channel type=self typeid=341}
+                    <a href="[field.typelink/]"><p class="inline-block">[field:typetitle/]</p></a>
+                    <a href="[field.typelink/]" class="more">查看更多&gt;&gt;</a>
+                {/ms:channel}
+            </div>
+            <ul class="pic-new">
+                {ms:arclist flag=w,h size=4 order=desc orderby=date typeid=341}
+                    <li>
+                        <a href="[field.link/]" target="_blank">
+                            <img class="pic" src="[field.litpic/]" alt="">
+                        </a>
+                        <p>[field.title/]</p>
+                    </li>
+                {/ms:arclist}
+            </ul>
+            <div class="jiange"></div>
+            <div class="title-yqtt">
+                {ms:channel type=self typeid=342}
+                    <a href="[field.typelink/]"><p class="inline-block">[field:typetitle/]</p></a>
+                    <a href="[field.typelink/]" class="more">查看更多&gt;&gt;</a>
+                {/ms:channel}
+            </div>
+            <ul class="tihui">
+                {ms:arclist flag=w size=4 order=desc orderby=date typeid=342}
+                    <li>
+                        <a href="[field.link/]" target="_blank">
+                            <div>[field.content/]</div>
+                        </a>
+                        <img class="pic" src="[field.litpic/]" alt="">
+                        <div>
+                            <p class="name-address">[field.author/]</p>
+                            <p class="name-address">[field.source/]</p>
+                        </div>
+                    </li>
+                {/ms:arclist}
+            </ul>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+</html>

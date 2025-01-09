@@ -1,0 +1,33 @@
+.footer{
+    padding: 23px 0 45px;
+    margin-top: 50px;
+    background-image: url(../image/footer-bg.png);
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    background-position: center;
+    min-width: 996px;
+}
+.footer>ul{
+    text-align: center;
+    color: #222222;
+    font-size: 13px;
+}
+.footer>ul>li{
+    margin-top: 10px;
+}
+.footer>ul>li>img{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: -5px;
+}
+.footer>ul>li>a{
+    color: #222222;
+}
+.footer>ul>li>a:hover{
+    color: #cc0000;
+}
+.footer>ul>li>a>img{
+    display: inline-block;
+    vertical-align: middle;
+}

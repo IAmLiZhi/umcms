@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/guopei-dianxing-content.css">
+</head>
+<body>
+    <img src="{ms:globalskin.url/}/image/guopei/guopei.png" alt="">
+    <div class="main-box">
+        {ms:include filename=ga.htm/}
+        <p class="current-position">
+            当前位置:
+            {ms:channel type=self typeid=338}<a href="[field.typelink/]">首页</a>{/ms:channel}
+            &gt;
+            {ms:channel type=self typeid=342}<a href="[field.typelink/]">[field:typetitle/]</a>{/ms:channel}
+            &gt;
+            正文
+        </p>
+        <div class="content-box">
+            <h2>{ms:field.title/}</h2>
+            <div class="date-setting">
+                <span class="date">{ms:field.date fmt=yyyy-MM-dd HH:mm/}</span>
+                <p class="font-size inline-block">字体大小：<span>【小】</span><span>【中】</span><span>【大】</span></p>
+                <span class="from">来源：{ms:field.source/}</span>
+                <input type="hidden" id="id" value="{ms:field.id/}">
+            </div>
+            <div class="content">
+                    {ms:field.content/}
+            </div>
+            <div>
+                <span>责任编辑：{ms:field.title/}</span>
+                <span class="inline-block print">【打印页面】</span>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/jydt-zyjh-content.js"></script>
+</html>

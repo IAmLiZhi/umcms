@@ -1,0 +1,65 @@
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+
+.main-box>.education-content{
+    overflow: hidden;
+}
+.main-box>.education-content>nav{
+    float: left;
+    width: 228px;
+    height: 788px;
+    background-color: #F2F5F7;
+    font-size: 17px;
+    color: #666666;
+}
+.main-box>.education-content>nav>li{
+    padding: 30px 0 30px 17px;
+    border-left: 7px solid transparent;
+    cursor: pointer;
+}
+.main-box>.education-content>nav>li.active{
+    border-left: 7px solid #5592EF;
+    background-color: #ffffff;
+}.main-box>.education-content>nav>li>img{
+    vertical-align: middle;
+}
+.main-box>.education-content>nav>li.boss>img,
+.main-box>.education-content>nav>li.boss-active>img{
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
+}
+.main-box>.education-content>nav>li.jygk>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 18px;
+}
+.main-box>.education-content>nav>li.institutions>img{
+    width: 23px;
+    height: 23px;
+    margin-right: 17px;
+}
+.main-box>.education-content>nav>li.unit>img{
+    width: 18px;
+    height: 18px;
+    margin-right: 19px;
+}
+.main-box>.education-content>nav>li.university>img{
+    width: 23px;
+    height: 16px;
+    margin-right: 17px;
+}
+.main-box>.education-content>.iframe{
+    float: left;
+    height: 788px;
+    width: 768px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-left: 0;
+}
+.main-box>.education-content>.iframe>iframe{
+    width: 100%;
+    height: 100%;
+}

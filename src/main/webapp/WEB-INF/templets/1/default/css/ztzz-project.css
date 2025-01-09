@@ -1,0 +1,113 @@
+body{
+    background: none;
+}
+.main-box{
+    width: 996px;
+    margin: 29px auto 0;
+}
+.main-box>.content-box{
+    overflow: hidden;
+    background-color: #F4F4F4;
+    border: 1px solid #CCCCCC;
+}
+.siteul>.ul-nav{
+    border-bottom: 1px solid #579AF5;
+    margin: 27px 27px 0;
+}
+.siteul>.ul-nav>p{
+    border-bottom: 2px solid #579AF5;
+    padding: 0 0 7px 0;
+    color: #579AF5;
+    font-size: 17px;
+    margin-left: 27px;
+}
+.siteul>.ul-nav>p>img{
+    width: 20px;
+    height: 18px;
+    margin-right: 11px;
+}
+.siteul>ul{
+    overflow: hidden;
+    margin: 0 53px;
+    padding-bottom: 7px;
+}
+.siteul>ul>li{
+    float: left;
+    width: 280px;
+    margin: 37px 24px 0 0;
+    text-align: center;
+    background-color: #ffffff;
+    padding-bottom: 10px;
+    box-shadow: 0 3px 10px #CCCCCC;
+}
+.siteul>ul>li>img{
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+.siteul>ul>li>p{
+    text-align: left;
+    border-left: 4px solid #5097ED;
+    padding: 2px 0 2px 6px;
+    font-size: 12px;
+    color: #4f4f4f;
+    margin: 8px 0 15px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.siteul>ul>li>a>button{
+    width: 73px;
+    height: 18px;
+    border: 1px solid #579AF5;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: #ffffff;
+    font-size: 12px;
+    color: #579AF5;
+}
+.siteul>.limit{
+    margin-top: 86px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.siteul>.limit>a{
+    color: #666666;
+}
+.siteul>.limit>span{
+    display: inline-block;
+}
+.siteul>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.siteul>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.siteul>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.siteul>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    vertical-align: middle;
+    text-align: center; 
+    font-size: 12px;
+}
+.siteul>.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+}
+.siteul>.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    vertical-align: middle;
+}
