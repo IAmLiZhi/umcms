@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 互动交流(发布)持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.IArticlePushDao">
+	<!-- 表栏目名 开始 -->
+	<sql id="column_list">
+		id,app_id,src_app_id,src_app_name,src_column_id,src_column_name,
+		link_title,link_url,link_thumbnails,dest_column_id,dest_column_name,state,create_time,pub_time
+	</sql>
+	<!-- 表栏目名 结束 -->
+	
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.ArticlePushEntity" id="resultMap">   
+		<id column="id" property="pushId" />				<!-- 主键id -->
+		<result column="app_id" property="appId" />		<!-- 本站Id -->
+		<result column="src_app_id" property="srcAppId" />		<!-- 源网站Id -->
+		<result column="src_app_name" property="srcAppName" />	<!-- 源网站名称 -->
+		<result column="src_column_id" property="srcColumnId" />			<!-- 源栏目 Id-->
+		<result column="src_column_name" property="srcColumnName" />			<!-- 源栏目名称 -->
+		<result column="link_title" property="linkTitle" />		<!-- 链接标题 -->
+		<result column="link_url" property="linkUrl" />		<!-- 链接地址 -->
+		<result column="link_thumbnails" property="linkThumbnails" />		<!-- 链接缩略图 -->
+		<result column="dest_column_id" property="destColumnId" />			<!-- 发布的目标栏目Id -->
+		<result column="dest_column_name" property="destColumnName" />			<!-- 发布的目标栏目名称 -->
+		<result column="state" property="state" />	<!-- 状态 -->
+		<result column="create_time" property="createTime" />		<!-- 创建时间 -->
+		<result column="pub_time" property="pubTime" />	<!-- 发布时间 -->
+	</resultMap>
+	
+	<!-- 添加信息开始 -->
+	<insert id="saveEntity" parameterType="com.uoumei.cms.entity.ArticlePushEntity">
+		INSERT INTO article_push
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="appId != null">app_id,</if>
+			<if test="srcAppId != null">src_app_id,</if>
+			<if test="srcAppName != null">src_app_name,</if>
+			<if test="srcColumnId != null">src_column_id,</if>
+			<if test="srcColumnName != null">src_column_name,</if>
+			<if test="linkTitle != null">link_title,</if>
+			<if test="linkUrl != null">link_url,</if>
+			<if test="linkThumbnails != null">link_thumbnails,</if>
+			<if test="destColumnId != null">dest_column_id,</if>
+			<if test="destColumnName != null">dest_column_name,</if>
+			<if test="state != null">state,</if>
+			<if test="createTime != null">create_time,</if>
+			<if test="pubTime != null">pub_time</if>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="appId != null">#{appId},</if>
+			<if test="srcAppId != null">#{srcAppId},</if>
+			<if test="srcAppName != null">#{srcAppName},</if>
+			<if test="srcColumnId != null">#{srcColumnId},</if>
+			<if test="srcColumnName != null">#{srcColumnName},</if>
+			<if test="linkTitle != null">#{linkTitle},</if>
+			<if test="linkUrl != null">#{linkUrl},</if>
+			<if test="linkThumbnails != null">#{linkThumbnails},</if>
+			<if test="destColumnId != null">#{destColumnId},</if>
+			<if test="destColumnName != null">#{destColumnName},</if>
+			<if test="state != null">#{state},</if>
+			<if test="createTime != null">#{createTime},</if>
+			<if test="pubTime != null">#{pubTime}</if>
+		</trim>
+	</insert>
+	<!-- 添加信息 结束 -->
+	
+	<!-- 删除信息 开始 -->
+	<delete id="deleteEntity" parameterType="int">
+		DELETE FROM article_push
+		WHERE id=#{pushId};
+	</delete>
+	<!-- 删除信息 结束 -->
+
+	<!-- 更新信息 开始 -->
+	<update id="updateEntity" parameterType="com.uoumei.cms.entity.ArticlePushEntity">
+		UPDATE article_push
+		<set>
+			<if test="appId != null">app_id = #{appId},</if>
+			<if test="srcAppId != null">src_app_id = #{srcAppId},</if>
+			<if test="srcAppName != null">src_app_name = #{srcAppName},</if>
+			<if test="srcColumnId != null">src_column_id = #{srcColumnId},</if>
+			<if test="srcColumnName != null">src_column_name = #{srcColumnName},</if>
+			<if test="linkTitle != null">link_title = #{linkTitle},</if>
+			<if test="linkUrl != null">link_url = #{linkUrl},</if>
+			<if test="linkThumbnails != null">link_thumbnails = #{linkThumbnails},</if>
+			<if test="destColumnId != null">dest_column_id = #{destColumnId},</if>
+			<if test="destColumnName != null">dest_column_name = #{destColumnName},</if>
+			<if test="state != null">state = #{state},</if>
+			<if test="createTime != null">create_time = #{createTime},</if>
+			<if test="pubTime != null">pub_time = #{pubTime}</if>
+		</set>
+		WHERE id = #{pushId}
+	</update>
+	<!-- 更新信息 开始 -->
+	
+	<!-- 查找信息 开始 -->
+	<select id="getEntity" resultMap="resultMap" parameterType="int">
+		SELECT
+		<include refid="column_list" />
+		FROM article_push
+		WHERE id = #{pushId}
+	</select>
+	
+	<!-- 查询所有 -->
+	<select id="query" resultMap="resultMap">
+		SELECT
+		<include refid="column_list" />
+		FROM article_push
+		WHERE app_id = #{appId}
+		<if test="srcAppId != null">
+			and src_app_id = #{srcAppId}
+		</if>
+		<if test="linkTitle != null">
+			and link_title LIKE CONCAT('%',#{linkTitle},'%')
+		</if>
+		<if test="state != null">
+			and state = #{state}
+		</if>
+		ORDER BY state asc, create_time desc
+	</select>
+	
+</mapper>

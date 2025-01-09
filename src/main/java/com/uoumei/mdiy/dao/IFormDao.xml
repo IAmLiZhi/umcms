@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uoumei.mdiy.dao.IFormDao">
+	
+	<resultMap id="resultMap" type="com.uoumei.mdiy.entity.FormEntity">
+		<id column="FORM_ID" property="formId" /><!--自增长id -->
+		<result column="FORM_TIPS_NAME" property="formTipsName" /><!--自定义表单提示文字 -->
+		<result column="FORM_TABLE_NAME" property="formTableName" /><!--自定义表单表名 -->
+		<result column="DF_MANAGERID" property="dfManagerid" /><!--自定义表单关联的关联员id -->
+		<result column="FORM_APP_ID" property="appId" /><!--自定义表单关联的应用编号 -->
+		<result column="CREATE_BY" property="createBy" /><!--创建者 -->
+		<result column="UPDATE_BY" property="updateBy" /><!--更新者 -->
+		<result column="CREATE_DATE" property="createDate" /><!--创建时间 -->
+		<result column="UPDATE_DATE" property="updateDate" /><!--更新时间 -->
+	</resultMap>
+	
+	<sql id="insertColumns">
+	    <if test="formTipsName != null and formTipsName != ''">FORM_TIPS_NAME,</if>
+		<if test="formTableName != null and formTableName != ''">FORM_TABLE_NAME,</if>
+		<if test="dfManagerid != null">DF_MANAGERID,</if>
+		<if test="appId != null">FORM_APP_ID,</if>
+		<if test="createBy != null">CREATE_BY,</if>
+		<if test="createDate != null">CREATE_DATE,</if>
+	</sql>
+	<sql id="insertValues">
+	    <if test="formTipsName != null and formTipsName != ''">#{formTipsName},</if>
+		<if test="formTableName != null and formTableName != ''">#{formTableName},</if>
+		<if test="dfManagerid != null">#{dfManagerid},</if>
+		<if test="appId != null">#{appId},</if>
+		<if test="createBy != null">#{createBy},</if>
+		<if test="createDate != null">#{createDate},</if>
+	</sql>
+	<!--mysql或sqlServer保存-->	
+	<insert id="saveEntity" useGeneratedKeys="true" keyProperty="formId"
+		parameterType="com.uoumei.mdiy.entity.FormEntity" >
+		insert into mdiy_form
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<include refid="insertColumns"></include>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<include refid="insertValues"></include>
+		</trim>
+	</insert>
+	<!--oracle保存-->
+	<insert id="saveEntity" useGeneratedKeys="false" keyProperty="formId"
+		parameterType="com.uoumei.mdiy.entity.FormEntity"  databaseId="oracle">
+		<selectKey resultType="Integer"  keyProperty="formId" order="BEFORE">
+			select seq_form_id.nextval as fromId from dual
+		</selectKey>
+		insert into mdiy_form
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+		    FORM_ID,
+			<include refid="insertColumns"></include>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+		    #{formId},
+			<include refid="insertValues"></include>
+		</trim>
+	</insert>
+	
+	<!--更新-->	
+	<update id="updateEntity" parameterType="com.uoumei.mdiy.entity.FormEntity">
+		update mdiy_form
+		<set>
+			<if test="formTipsName != null and formTipsName != ''">FORM_TIPS_NAME=#{formTipsName},</if>			
+			<if test="formTableName != null and formTableName != ''">FORM_TABLE_NAME=#{formTableName},</if>			
+			<if test="dfManagerid != null">DF_MANAGERID=#{dfManagerid},</if>			
+			<if test="updateBy != null">UPDATE_BY=#{updateBy},</if>			
+			<if test="updateDate != null">UPDATE_DATE=#{updateDate},</if>			
+		</set>
+		where FORM_ID = #{formId}
+	</update>
+	
+	<!--根据id获取-->	
+	<select id="getEntity" resultMap="resultMap" parameterType="int">
+		select * from mdiy_form where FORM_ID=#{formId}
+	</select>
+	
+	<sql id="queryMdiyFormWhere">
+	    <if test="formTipsName != null and formTipsName != ''"> and FORM_TIPS_NAME=#{formTipsName} </if>				
+		<if test="formTableName != null and formTableName != ''"> and FORM_TABLE_NAME=#{formTableName} </if>				
+		<if test="dfManagerid != null"> and DF_MANAGERID=#{dfManagerid} </if>				
+		<if test="appId &gt; 0"> and FORM_APP_ID=#{appId} </if>
+	</sql>
+	<!--mysql根据实体获取-->
+	<select id="getByEntity" resultMap="resultMap" parameterType="com.uoumei.mdiy.entity.FormEntity" databaseId="mysql">
+		select * from mdiy_form 
+		<where>
+			<include refid="queryMdiyFormWhere"></include>		
+		</where>
+		limit 0,1
+	</select>	
+	<!--oracle根据实体获取-->
+	<select id="getByEntity" resultMap="resultMap" parameterType="com.uoumei.mdiy.entity.FormEntity" databaseId="oracle">
+		select * from mdiy_form 
+		<where>
+			<include refid="queryMdiyFormWhere"></include>
+			and rownum=1			
+		</where>
+	</select>	
+	<!--sqlServer根据实体获取-->
+	<select id="getByEntity" resultMap="resultMap" parameterType="com.uoumei.mdiy.entity.FormEntity" databaseId="sqlServer">
+		select top(1) * from mdiy_form 
+		<where>
+			<include refid="queryMdiyFormWhere"></include>			
+		</where>
+	</select>	
+	
+	
+	<!--删除-->	
+	<delete id="deleteEntity" parameterType="int">
+		delete from mdiy_form  where FORM_ID=#{formId}
+	</delete>	
+	
+	<!--批量删除-->	
+	<delete id="delete" >
+		delete from mdiy_form
+		<where>
+			 FORM_ID  in <foreach collection="ids" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+		</where>
+	</delete>
+	<!--查询全部-->	
+	<select id="queryAll" resultMap="resultMap">
+		select * from mdiy_form order by FORM_ID desc
+	</select>
+	<!--条件查询-->	
+	<select id="query" resultMap="resultMap">
+		select * from mdiy_form  
+		<where>
+				FORM_APP_ID = #{appId}
+				<if test="formTipsName != null and formTipsName != ''"> and FORM_TIPS_NAME=#{formTipsName} </if>				
+				<if test="formTableName != null and formTableName != ''"> and FORM_TABLE_NAME=#{formTableName} </if>				
+				<if test="dfManagerid != null"> and DF_MANAGERID=#{dfManagerid} </if>				
+		</where>		
+		order by FORM_ID desc
+	</select>
+	<!-- mysql根据sql动态创建表开始 -->
+	<update id="createDiyFormTable" statementType="STATEMENT" databaseId="mysql">
+		CREATE TABLE `${table}` (
+		`Id` int(11) NOT NULL AUTO_INCREMENT,
+		`date` timestamp NULL DEFAULT NULL COMMENT 'CURRENT_TIMESTAMP',
+		`fromID` int(11) DEFAULT NULL,
+		PRIMARY KEY (`Id`)
+		) ENGINE=InnoDB
+		AUTO_INCREMENT=5 DEFAULT CHARSET=utf8
+	</update>
+	<!-- mysql根据sql动态创建表结束 -->
+	
+	<!-- oracle根据sql动态创建表开始 -->
+	<update id="createDiyFormTable" statementType="STATEMENT" databaseId="oracle">
+	    begin 
+		execute immediate 'create TABLE ${table}(
+		"ID" number(11) NOT NULL PRIMARY KEY,
+		"DATE" date  DEFAULT NULL,
+		"FROMID" number(11) DEFAULT NULL
+		)';
+		execute immediate 'create sequence seq_${table}_Id 
+        increment by 1
+        start with 5
+        maxvalue 999999999';
+        end;
+        
+        
+	</update>
+	<!-- oracle根据sql动态创建表结束 -->
+	
+	<!-- sqlServer根据sql动态创建表开始 -->
+	<update id="createDiyFormTable" statementType="STATEMENT" databaseId="sqlServer">
+		CREATE TABLE ${table} (
+		Id int NOT NULL identity(5,1) PRIMARY KEY,
+		date datetime NULL DEFAULT NULL,
+		fromID int DEFAULT NULL
+		)
+	</update>
+	<!-- sqlServer根据sql动态创建表结束 -->
+</mapper>

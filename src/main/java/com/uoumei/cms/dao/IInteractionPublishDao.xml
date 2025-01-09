@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 互动交流(发布)持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.IInteractionPublishDao">
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.InteractionPublishEntity"
+		id="resultMap">
+		<id column="id" property="id" />				<!-- 主键id -->
+		<result column="name" property="name" />		<!-- 发布人姓名 -->
+		<result column="phone" property="phone" />		<!-- 发布人手机号 -->
+		<result column="card_no" property="cardNo" />	<!-- 发布人身份证号 -->
+		<result column="title" property="title" />		<!-- 发布标题 -->
+		<result column="publish_content" property="publishContent" />			<!-- 发布内容 -->
+		<result column="file_url" property="fileUrl" />	<!-- 附加文件 -->
+		<result column="type" property="type" />		<!-- 发布类型,1.咨询,2.投诉,3.反馈,4.信箱 -->
+		<result column="state" property="state" />		<!-- 发布状态,1.已回复,2.未回复 -->
+		<result column="create_time" property="createTime" />	<!-- 发布时间 -->
+		<result column="app_id" property="appId" />	<!-- app_id -->
+		<result column="reply_content" property="replyContent" />	<!-- 回复信息 -->
+		<result column="reply_time" property="replyTime" />	<!-- 回复时间 -->
+		<result column="isopen" property="isOpen" />	<!-- 是否回复 -->
+		
+		
+	</resultMap>
+
+	<!-- 保存发布 -->
+	<insert id="save" keyProperty="id" useGeneratedKeys="true"
+		parameterType="com.uoumei.cms.entity.InteractionPublishEntity">
+		insert into interaction_publish
+		(id,name,phone,card_no,title,publish_content,file_url,type,state,create_time,app_id)
+		VALUES
+		(#{id},#{name},#{phone},#{cardNo},#{title},#{publishContent},#{fileUrl},#{type},#{state},#{createTime},#{appId});
+	</insert>
+	<!-- 修改发布 -->
+	<update id="update" parameterType="int">
+		update interaction_publish SET
+		state=1 where id=#{id};
+	</update>
+	<!-- 根据type查询所有 -->
+	<select id="queryByType" resultMap="resultMap">
+		SELECT
+		i.id,i.app_id,i.name,i.phone,i.card_no,i.title,i.publish_content,i.file_url,i.type,i.state,i.create_time,r.reply_time,r.isopen
+		FROM interaction_publish i LEFT JOIN interaction_reply r on (i.id =
+		r.publish_id)
+		where i.app_id = #{appId} and i.type= #{type}
+		<if test="content!=null">
+			and publish_content LIKE CONCAT('%',#{content},'%')
+		</if>
+		<if test="state &gt; 0">
+			and i.state =#{state}
+		</if>
+		ORDER BY create_time desc
+	</select>
+	<!-- 查询回复和未回复 -->
+	<select id="queryByState" resultMap="resultMap" parameterType="int">
+		SELECT i.id,i.app_id,i.name,i.phone,i.card_no,i.title,i.publish_content,i.file_url,i.type,i.state,i.create_time,r.reply_time,r.isopen
+		FROM interaction_publish i LEFT JOIN interaction_reply r on (i.id = r.publish_id)
+		where i.app_id = #{appId} and i.type= #{type} and i.state = 1 and r.isopen = 0 
+		ORDER BY create_time desc
+	</select>
+	<!-- 根据id查询 -->
+	<select id="getById" resultMap="resultMap" parameterType="int">
+		SELECT
+		* FROM interaction_publish i LEFT JOIN interaction_reply r on (i.id =
+		r.publish_id) where i.id = #{id}
+	</select>
+
+	<!-- 删除信息 开始 -->
+	<delete id="deleteEntity" parameterType="int">
+		DELETE FROM
+		interaction_publish
+		WHERE id=#{id};
+	</delete>
+	
+
+
+
+
+
+
+</mapper>

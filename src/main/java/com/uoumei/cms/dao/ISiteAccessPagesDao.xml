@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 访问详细页面持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.ISiteAccessPagesDao">
+	<!-- 访问详细页面表名 开始 -->
+	<sql id="column_list">
+		access_pages_id,access_page,session_id,access_date,access_time,visit_second,page_index,app_id
+	</sql>
+	<!-- 访问详细页面表名 结束 -->
+
+
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.SiteAccessPages" id="resultMap">
+		<id column="access_pages_id" property="accessPagesId" />				<!-- 访问详细页面Id -->
+		<result column="access_page" property="accessPage" />	<!-- 访问页面 -->
+		<result column="session_id" property="sessionId" />		<!-- 会话Id -->
+		<result column="access_date" property="accessDate" />			<!-- 访问日期 -->
+		<result column="access_time" property="accessTime" />		<!-- 访问时间 -->
+		<result column="visit_second" property="visitSecond" />			<!-- 停留时长（秒） -->
+		<result column="page_index" property="pageIndex" />	<!-- 用户访问页面的索引 -->
+		<result column="app_id" property="appId" /><!-- 站点id -->
+	</resultMap>
+	
+	<select id="findAccessPage" resultMap="resultMap">
+		select
+		<include refid="column_list" />
+		from site_access_pages bean where bean.session_id =#{sessionId} and bean.page_index =#{pageIndex}
+	</select>
+	
+	<!-- 添加访问详细页面 开始 -->
+	<insert id="save" keyProperty="accessPagesId" useGeneratedKeys="true"
+		parameterType="com.uoumei.cms.entity.SiteAccessPages">
+		insert into site_access_pages
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="accessPage != null">access_page,</if>
+			<if test="sessionId != null">session_id,</if>
+			<if test="accessDate != null">access_date,</if>
+			<if test="accessTime != null">access_time,</if>
+			<if test="visitSecond != null">visit_second,</if>
+			<if test="pageIndex != null">page_index,</if>
+			<if test="appId != null">app_id,</if>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="accessPage != null">#{accessPage},</if>
+			<if test="sessionId != null">#{sessionId},</if>
+			<if test="accessDate != null">#{accessDate},</if>
+			<if test="accessTime != null">#{accessTime},</if>
+			<if test="visitSecond != null">#{visitSecond},</if>
+			<if test="pageIndex != null">#{pageIndex},</if>
+			<if test="appId != null">#{appId},</if>
+		</trim>
+	</insert>
+	<!-- 添加访问详细页面 结束 -->
+	
+	<!-- 更新访问详细页面 开始 -->
+	<update id="updateByUpdater" parameterType="com.uoumei.cms.entity.SiteAccessPages">
+		update site_access_pages
+		<set>
+			<if test="accessPage != null">access_page=#{accessPage},</if>
+			<if test="sessionId != null">session_id=#{sessionId},</if>
+			<if test="accessDate != null">access_date=#{accessDate},</if>
+			<if test="accessTime != null">access_time=#{accessTime},</if>
+			<if test="visitSecond != null">visit_second=#{visitSecond},</if>
+			<if test="pageIndex != null">page_index=#{pageIndex},</if>
+			<if test="appId != null">app_id=#{appId},</if>
+		</set>
+		where access_pages_id = #{accessPagesId}
+	</update>
+	<!-- 更新访问详细页面 结束 -->
+	
+	<!-- 删除访问详细页面信息 开始 -->
+	<delete id="clearByDate" parameterType="date">
+		delete from site_access_pages where access_date !=#{date}
+	</delete>
+	<!-- 删除访问详细页面信息 结束 -->
+
+</mapper>

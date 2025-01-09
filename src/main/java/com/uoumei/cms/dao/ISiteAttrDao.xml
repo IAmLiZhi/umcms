@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 站点属性持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.ISiteAttrDao">
+	<!-- 站点属性名 开始 -->
+	<sql id="column_list">
+		app_id,attr_name,attr_value
+	</sql>
+	<!-- 站点属性名 结束 -->
+
+
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.SiteAttr" id="resultMap">
+		<id column="app_id" property="appId" />				<!-- 站点id -->
+		<id column="attr_name" property="attrName" />	<!-- 名称 -->
+		<id column="attr_value" property="attrValue" />		<!-- 值 -->
+	</resultMap>
+
+</mapper>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 访问统计持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.ISiteAccessStatisticDao">
+	<!-- 访问统计表名 开始 -->
+	<sql id="column_list">
+		access_statistic_id,statistic_date,pv,ip,visitors,pages_aver,visit_second_aver,statisitc_type,statistic_column_value,app_id
+	</sql>
+	<!-- 访问统计表名 结束 -->
+
+
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.SiteAccessStatistic" id="resultMap">
+		<id column="access_statistic_id" property="accessStatisticId" />				<!-- 访问详细页面Id -->
+		<result column="statistic_date" property="statisticDate" />	<!-- 统计日期 -->
+		<result column="pv" property="pv" />		<!-- PV -->
+		<result column="ip" property="ip" />			<!-- IP -->
+		<result column="visitors" property="visitors" />		<!-- 用户数 -->
+		<result column="pages_aver" property="pagesAver" />			<!-- 人均浏览次数 -->
+		<result column="visit_second_aver" property="visitSecondAver" />	<!-- 人均访问时长（秒） -->
+		<result column="statisitc_type" property="statisitcType" /><!-- 统计分类（all代表当天所有访问量的统计） -->
+		<result column="statistic_column_value" property="statisticColumnValue" />		<!-- 统计栏目 -->
+		<result column="app_id" property="appId" />		<!-- 站点id -->
+	</resultMap>
+	
+	<!-- 添加访问统计信息 开始 -->
+	<insert id="save" parameterType="com.uoumei.cms.entity.SiteAccessStatistic">
+		insert into site_access_statistic
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="accessStatisticId != null">access_statistic_id,</if>
+			<if test="statisticDate != null">statistic_date,</if>
+			<if test="pv != null">pv,</if>
+			<if test="ip != null">ip,</if>
+			<if test="visitors != null">visitors,</if>
+			<if test="pagesAver != null">pages_aver,</if>
+			<if test="visitSecondAver != null">visit_second_aver,</if>
+			<if test="statisitcType != null">statisitc_type,</if>
+			<if test="statisticColumnValue != null">statistic_column_value,</if>
+			<if test="appId != null">app_id,</if>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="accessStatisticId != null">#{accessStatisticId},</if>
+			<if test="statisticDate != null">#{statisticDate},</if>
+			<if test="pv != null">#{pv},</if>
+			<if test="ip != null">#{ip},</if>
+			<if test="visitors != null">#{visitors},</if>
+			<if test="pagesAver != null">#{pagesAver},</if>
+			<if test="visitSecondAver != null">#{visitSecondAver},</if>
+			<if test="statisitcType != null">#{statisitcType},</if>
+			<if test="statisticColumnValue != null">#{statisticColumnValue},</if>
+			<if test="appId != null">#{appId},</if>
+		</trim>
+	</insert>
+	<!-- 添加访问统计信息 结束 -->
+	
+	<!-- 统计区间 -->
+	<select id="statistic" resultType="hashmap">
+		select bean.pv as pv , 
+		bean.ip as ip, 
+		bean.visitors as visitors, 
+		bean.visit_second_aver as visitSecondAver, 
+		bean.statistic_date as statisticDate
+		from site_access_statistic bean 
+		where bean.app_id = #{siteId} and bean.statisitc_type = #{statisticType}
+		<if test="begin != null">
+			and bean.statistic_date &gt;= #{begin}
+		</if>
+		<if test="end != null">
+			and bean.statistic_date &lt;= #{end}
+		</if>
+		<if test="statisticValue != null">
+			and bean.statistic_column_value =#{statisticValue}
+		</if>
+	</select>
+	
+	<!--  -->
+	<select id="findStatisticColumnValues" resultMap="resultMap">
+		select bean.statistic_column_value from site_access_statistic bean
+		where bean.app_id =#{siteId} and bean.statisitc_type=#{statisticType}
+		<if test="begin != null">
+			and bean.statistic_date >= #{begin}
+		</if>
+		<if test="end != null">
+			and bean.statistic_date &lt;= #{end}
+		</if>
+		group by bean.statistic_column_value
+		order by sum(bean.pv) desc
+	</select>
+	
+	<!-- top -->
+	<select id="statisticByColumnValue" resultType="hashmap">
+		select 
+		bean.statistic_column_value as statisticColumnValue
+		<if test="target == 0">
+			,sum(bean.pv) as pv
+		</if>
+		<if test="target == 1">
+			,sum(bean.ip) as ip
+		</if>
+		<if test="target == 2">
+			,sum(bean.visitors) as visitors
+		</if>
+		from site_access_statistic bean 
+		where bean.app_id =#{siteId} and bean.statisitc_type =#{statisticType}
+		<if test="begin != null">
+			and bean.statistic_date &gt;= #{begin}
+		</if>
+		<if test="end != null">
+			and bean.statistic_date &lt;= #{end}
+		</if>
+		group by bean.statistic_column_value 
+		<if test="target == 0">
+			order by sum(bean.pv)
+		</if>
+		<if test="target == 1">
+			order by sum(bean.ip)
+		</if>
+		<if test="target == 2">
+			order by sum(bean.visitors)
+		</if>
+		<if test="sort != null">
+			<if test="sort == 0">
+				asc
+			</if>
+			<if test="sort == 1">
+				desc
+			</if>
+		</if>
+		limit 0,#{count}
+	</select>
+	
+	<!-- 查询总数 -->
+	<select id="statisticTotal" resultType="hashmap">
+		SELECT SUM(pv) as pv, SUM(ip) as ip, SUM(visitors) as visitors 
+		FROM site_access_statistic 
+		WHERE app_id = #{siteId}
+	</select>
+	
+	<!-- follow is nouse -->
+	<!-- 统计年度 -->
+	<select id="statisticByYear" resultType="hashmap">
+		select sum(bean.pv),sum(bean.ip),sum(bean.visitors),(sum(bean.visit_second_aver * bean.visitors)/sum(bean.visitors)),
+		month(bean.statistic_date) from site_access_statistic bean 
+		where bean.app_id = #{siteId} and year(bean.statistic_date)=#{year} and bean.statisitc_type =#{statisticType} 
+		<if test="statisticValue != null">
+			and bean.statistic_column_value =#{statisticValue}
+		</if>
+		group by month(bean.statistic_date)
+		<if test="orderBy != null">
+			<if test="orderBy == 0">
+				order by sum(bean.pv) desc
+			</if>
+			<if test="orderBy == 1">
+				order by sum(bean.ip) desc
+			</if>
+			<if test="orderBy == 2">
+				order by (sum(bean.visit_second_aver * bean.visitors)/sum(bean.visitors)) desc
+			</if>
+			<if test="orderBy == 3">
+				order by month(bean.statistic_date) asc
+			</if>
+		</if>
+	</select>
+	
+	<!-- 选择年度统计 -->
+	<select id="statisticByYearByTarget" resultMap="resultMap">
+		<if test="target == 0">
+			select sum(bean.pv)as pv,month(bean.statistic_date)as m
+		</if>
+		<if test="target == 1">
+			select count(bean.ip)as ip,month(bean.statistic_date)as m
+		</if>
+		<if test="target == 2">
+			select sum(bean.visitors)as visitors, month(bean.statistic_date)as m
+		</if>
+		<if test="target == 3">
+			select sum(bean.visit_second_aver)as second, month(bean.statistic_date)as m
+		</if>
+		<if test="target == 4">
+			select sum(bean.pv)as pv,count(distinct bean.ip)as ip,sum(bean.visitors) as visitors,sum(bean.visit_second_aver) as second,bean.statistic_date
+		</if>
+		from site_access_statistic bean where bean.app_id =#{siteId} and year(bean.statistic_date)=#{year} and bean.statisitc_type=#{statisticType}
+		<if test="statisticValue != null">
+			and bean.statistic_column_value =#{statisticValue}
+		</if>
+		group by month(bean.statistic_date) order by month(bean.statistic_date) asc
+		
+	</select>
+	
+</mapper>

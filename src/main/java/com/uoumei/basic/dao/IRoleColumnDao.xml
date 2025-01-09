@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 角色栏目关联持久化层XML配置继承IRoleColumnDao -->
+<mapper namespace="com.uoumei.basic.dao.IRoleColumnDao">
+	<resultMap id="resultMap" type="com.uoumei.basic.entity.RoleColumnEntity">
+		<id column="role_id" property="roleId"/><!-- 将实体的ID属性与表的ID字段对接 -->
+		<result column="column_id" property="columnId"/><!-- 将实体的roleName属性与表的roleName字段对接 -->
+	</resultMap>
+	<!-- MySQLOrSqlServer 在角色栏目表中保存数据，一个角色存在多个功能栏目开始 -->
+	<insert id="saveEntity" parameterType="java.util.List">
+		insert into role_column (column_id,role_id) values
+		<foreach collection="list" item="item" index="index" separator=",">
+			(#{item.columnId},#{item.roleId})
+		</foreach>
+	</insert>
+	<!-- oracle批处理添加 -->
+	<insert id="saveEntity" parameterType="java.util.List" databaseId="oracle">
+		<foreach collection="list" item="item" index="index" open="begin" close=";end;" separator=";" >
+			insert into role_column (column_id,role_id) values
+			(#{item.columnId},#{item.roleId})
+		</foreach>
+	</insert>
+	<insert id="saveBatch" parameterType="java.util.List">
+		insert into role_column (column_id,role_id) values
+		<foreach collection="list" item="item" index="index" separator=",">
+			(#{item.columnId},#{item.roleId})
+		</foreach>
+	</insert>
+	<!-- oracle批处理添加 -->
+	<insert id="saveBatch" parameterType="java.util.List" databaseId="oracle">
+		<foreach collection="list" item="item" index="index" open="begin" close=";end;" separator=";" >
+			insert into role_column (column_id,role_id) values
+			(#{item.columnId},#{item.roleId})
+		</foreach>
+	</insert>
+	<!-- 在角色栏目表中保存数据，一个角色存在多个功能栏目结束 -->
+	
+	<!--为角色批量修改栏目开始 -->
+	<update id="updateEntity" parameterType="java.util.List">  
+	    replace into role_column (column_id,role_id) values 
+	    <foreach collection="list" item="item" index="index" separator=",">  
+	         (#{item.columnId},#{item.roleId})
+	    </foreach>
+	</update> 
+	<!--为角色批量修改栏目结束 -->
+	<!--oracle为角色批量修改栏目开始 -->
+	<update id="updateEntity" parameterType="java.util.List" databaseId="oracle">>  
+	    <foreach collection="list" item="item" index="index" open="begin" close=";end;" separator=";" >  
+	    	 replace into role_column (column_id,role_id) values
+	         (#{item.columnId},#{item.roleId})
+	    </foreach>
+	</update> 
+	<!--为角色批量修改栏目结束 -->
+	
+	<!--删除指定角色的栏目开始 -->
+	<update id="deleteEntity" parameterType="int">  
+	   delete from role_column where role_id=#{roleId}
+	</update> 
+	<update id="deleteByRoleId" parameterType="int">  
+	   delete from role_column where role_id=#{roleId}
+	</update> 	
+	<!--删除指定角色的栏目结束 -->
+	<!-- 通过角色id获取所有的关联栏目id -->
+	<select id="queryByRoleId" resultMap="resultMap" parameterType="int" >
+		select * from role_column where role_id=#{roleId}
+	</select>
+	<!-- 通过角色id获取所有的关联栏目id -->
+</mapper>

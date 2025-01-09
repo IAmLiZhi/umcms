@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 站点访问表持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.ISiteAccessDao">
+	<!-- 站点访问表名 开始 -->
+	<sql id="column_list">
+		access_id,session_id,app_id,access_time,access_date,ip,area,access_source,external_link,engine
+		,entry_page,last_stop_page,visit_second,visit_page_count,operating_system,browser,keyword
+	</sql>
+	<!-- 站点访问表名 结束 -->
+
+
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.SiteAccess" id="resultMap">
+		<id column="access_id" property="accessId" />				<!-- 访问id -->
+		<result column="session_id" property="sessionId" />	<!-- 会话Id -->
+		<result column="app_id" property="appId" />		<!-- 站点id -->
+		<result column="access_time" property="accessTime" />			<!-- 访问时间 -->
+		<result column="access_date" property="accessDate" />		<!-- 访问日期 -->
+		<result column="ip" property="ip" />			<!-- ip地址 -->
+		<result column="area" property="area" />	<!-- 访问地区 -->
+		<result column="access_source" property="accessSource" /><!-- 访问来源 -->
+		<result column="external_link" property="externalLink" />		<!-- 外部链接 -->
+		<result column="engine" property="engine" />		<!-- 搜索引擎 -->
+		<result column="entry_page" property="entryPage" />				<!-- 入口页面 -->
+		<result column="last_stop_page" property="lastStopPage" />				<!-- 最后停留页面 -->
+		<result column="visit_second" property="visitSecond" />					<!-- 访问时长(秒) -->
+		<result column="visit_page_count" property="visitPageCount" />			<!-- 访问页面数 -->
+		<result column="operating_system" property="operatingSystem" /><!-- 操作系统 -->
+		<result column="browser" property="browser" />	<!-- 浏览器 -->
+		<result column="keyword" property="keyword" />				<!-- 来访关键字 -->
+	</resultMap>
+
+	<!-- 查询date当天的访问记录数量 -->
+	<select id="findCountByDate" resultType="int">
+		select count(*)
+		from site_access access where access.app_id=#{siteId} and
+		access.access_date = #{date} 
+	</select>
+	
+	<!-- 查询date之前最近的访问记录 -->
+	<select id="findRecentAccess" resultMap="resultMap" databaseId="mysql">
+		select
+		<include refid="column_list" />
+		from site_access access where access.app_id=#{siteId} and
+		access.access_date !=#{date} order by access.access_date desc
+		limit 0,1
+	</select>
+	<select id="findRecentAccess" resultMap="resultMap" databaseId="oracle">
+		select
+		<include refid="column_list" />
+		from site_access access where rownum=1 and 
+		access.app_id=#{siteId} and
+		access.access_date !=#{date} order by access.access_date desc
+	</select>
+	<select id="findRecentAccess" resultMap="resultMap" databaseId="sqlServer">
+		select top(1)
+		<include refid="column_list" />
+		from site_access access where access.app_id=#{siteId} and
+		access.access_date !=#{date} order by access.access_date desc
+	</select>
+	
+	<select id="findAccessBySessionId" resultMap="resultMap" databaseId="mysql">
+		select
+		<include refid="column_list" />
+		from site_access bean where bean.session_id =#{sessionId}
+		limit 0,1
+	</select>
+	<select id="findAccessBySessionId" resultMap="resultMap" databaseId="oracle">
+		select
+		<include refid="column_list" />
+		from site_access bean where rownum=1 and
+		bean.session_id =#{sessionId}
+	</select>
+	<select id="findAccessBySessionId" resultMap="resultMap" databaseId="sqlServer">
+		select top(1)
+		<include refid="column_list" />
+		from site_access bean where bean.session_id =#{sessionId}
+	</select>
+	
+	<!-- 统计日期站点流量 -->
+	<select id="statisticByDay" resultType="hashmap">
+		select sum(access.visit_page_count) as pv, count(distinct access.ip)as ip, count(distinct access.session_id) as visitors ,sum(access.visit_second) as visitSecond,
+		'' as statisticColumnValue
+		from site_access access where access.app_id =#{siteId} and
+		access.access_date =#{date}
+	</select>
+
+	<!-- 统计来源站点流量 -->
+	<select id="statisticBySource" resultType="hashmap">
+		select sum(access.visit_page_count) as pv,count(distinct access.ip)as ip,count(distinct access.session_id) as visitors ,sum(access.visit_second) as visitSecond, 
+		access.access_source as statisticColumnValue
+		from site_access access where access.app_id=#{siteId} and access.access_date=#{date}
+		group by access.access_source
+	</select>
+
+	<!-- 统计搜索引擎站点流量 -->
+	<select id="statisticByEngine" resultType="hashmap">
+		select sum(access.visit_page_count) as pv,count(distinct access.ip)as ip,count(distinct access.session_id) as visitors ,sum(access.visit_second) as visitSecond, 
+		access.engine  as statisticColumnValue
+		from site_access access where access.app_id=#{siteId} and access.access_date=#{date} and access.engine!='' 
+		group by access.engine
+	</select>
+
+	<!-- 统计外部链接站点流量 -->
+	<select id="statisticByLink" resultType="hashmap">
+		select sum(access.visit_page_count) as pv,count(distinct access.ip)as ip,count(distinct access.session_id) as visitors ,sum(access.visit_second) as visitSecond, 
+		access.external_link  as statisticColumnValue
+		from site_access access where access.app_id=#{siteId} and access.access_date=#{date} and access.external_link!=''
+		group by access.external_link
+	</select>
+
+	<!-- 统计外部链接站点流量 -->
+	<select id="statisticByKeyword" resultType="hashmap">
+		select sum(access.visit_page_count) as pv,count(distinct access.ip)as ip,count(distinct access.session_id) as visitors ,sum(access.visit_second) as visitSecond, 
+		access.keyword  as statisticColumnValue
+		from site_access access where access.app_id=#{siteId} and access.access_date=#{date} and access.keyword!=''
+		group by access.keyword
+	</select>
+	
+	<!-- 统计用户访问页数-->
+	<select id="statisticByPageCount" resultType="hashmap">
+		select count(distinct access.session_id) as visitors ,access.visit_page_count as pageCount
+		from site_access access where access.app_id=#{siteId} and access.access_date=#{date} 
+		group by access.visit_page_count order by count(distinct access.session_id) desc
+	</select>
+	
+	<!-- 统计日期站点流量（按小时分组）-->
+	<select id="statisticByDayGroupByHour" resultType="hashmap">
+		select sum(access.visit_page_count) as pv,count(distinct access.ip)as ip,count(distinct access.session_id) as visitors ,hour(access.access_time) as accessHour
+		from site_access access where  access.app_id=#{siteId} and access.access_date=#{date}
+		group by hour(access.access_time)
+	</select>
+	
+	<!-- 今日总数 -->
+	<select id="statisticToday" resultType="hashmap">
+		select 
+		sum(bean.visit_page_count) as pv,
+		count(distinct bean.ip) as ip,
+		count(distinct bean.session_id) as visitors,
+		sum(bean.visit_second) as visitSecond  
+		from site_access bean 
+		where bean.app_id =#{siteId} and bean.access_date=#{date}
+	</select>
+	
+	<!-- 查询property列值 -->
+	<select id="findPropertyValues" resultType="java.lang.String">
+		select distinct bean.#{property} from site_access bean where bean.app_id =#{siteId} and bean.#{property} !=''
+	</select>	
+	
+	<!-- 今日数据统计(按小时) -->
+	<select id="statisticTodayByTarget" resultMap="resultMap">
+		<if test="target == 0">
+			select sum(bean.pv)as pv,month(bean.statistic_date)as m
+		</if>
+		<if test="target == 1">
+			select count(distinct bean.ip)as ip, hour(bean.access_time)as m
+		</if>
+		<if test="target == 2">
+			select count(distinct bean.session_id)as visitors, hour(bean.access_time)as m
+		</if>
+		<if test="target == 3">
+			select sum(bean.visit_second)as second, hour(bean.access_time)as m
+		</if>
+		<if test="target == 4">
+			select sum(bean.visit_page_count)as pv,count(distinct bean.ip)as ip,count(distinct bean.session_id)as visitors,avg(bean.visit_second) as second,hour(bean.access_time) as m
+		</if>
+		from site_access bean where bean.app_id =#{siteId}
+		<if test="statisticColumn.equals(STATISTIC_SOURCE)">
+			and bean.access_source =#{statisticValue}
+		</if>
+		<if test="statisticColumn.equals(STATISTIC_ENGINE)">
+			and bean.engine =#{statisticValue}
+		</if>
+		<if test="statisticColumn.equals(STATISTIC_AREA)">
+			and bean.area =#{statisticValue}
+		</if>
+		<if test="statisticColumn.equals(STATISTIC_LINK)">
+			and bean.external_link =#{statisticValue}
+		</if>
+		<if test="statisticColumn.equals(STATISTIC_KEYWORD)">
+			and bean.keyword =#{statisticValue}
+		</if>
+		group by hour(bean.access_time) order by hour(bean.access_time) asc
+	</select>
+	
+	<!-- 删除统计用户访问信息-->
+	<delete id="clearByDate" parameterType="date">
+		delete from site_access where access_date !=#{date}
+	</delete>
+
+	<!-- 添加站点访问信息 开始 -->
+	<insert id="saveOrUpdate" keyProperty="accessId" useGeneratedKeys="true"
+		parameterType="com.uoumei.cms.entity.SiteAccess">
+		insert into site_access
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="sessionId != null">session_id,</if>
+			<if test="appId != null">app_id,</if>
+			<if test="accessTime != null">access_time,</if>
+			<if test="accessDate != null">access_date,</if>
+			<if test="ip != null">ip,</if>
+			<if test="area != null">area,</if>
+			<if test="accessSource != null">access_source,</if>
+			<if test="externalLink != null">external_link,</if>
+			<if test="engine != null">engine,</if>
+			<if test="entryPage != null">entry_page,</if>
+			<if test="lastStopPage != null">last_stop_page,</if>
+			<if test="visitSecond != null">visit_second,</if>
+			<if test="visitPageCount != null">visit_page_count,</if>
+			<if test="operatingSystem != null">operating_system,</if>
+			<if test="browser != null">browser,</if>
+			<if test="keyword != null">keyword,</if>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="sessionId != null">#{sessionId},</if>
+			<if test="appId != null">#{appId},</if>
+			<if test="accessTime != null">#{accessTime},</if>
+			<if test="accessDate != null">#{accessDate},</if>
+			<if test="ip != null">#{ip},</if>
+			<if test="area != null">#{area},</if>
+			<if test="accessSource != null">#{accessSource},</if>
+			<if test="externalLink != null">#{externalLink},</if>
+			<if test="engine != null">#{engine},</if>
+			<if test="entryPage != null">#{entryPage},</if>
+			<if test="lastStopPage != null">#{lastStopPage},</if>
+			<if test="visitSecond != null">#{visitSecond},</if>
+			<if test="visitPageCount != null">#{visitPageCount},</if>
+			<if test="operatingSystem != null">#{operatingSystem},</if>
+			<if test="browser != null">#{browser},</if>
+			<if test="keyword != null">#{keyword},</if>
+		</trim>
+	</insert>
+	<!-- 添加站点访问信息 结束 -->
+	
+</mapper>

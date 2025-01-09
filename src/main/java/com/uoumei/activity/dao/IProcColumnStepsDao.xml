@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uoumei.activity.dao.IProcColumnStepsDao">
+	<cache />
+	<!-- 字段绑定 开始 -->
+	<resultMap type="com.uoumei.activity.entity.ProcColumnStepsEntity" id="resultMap">
+		<id column="ID" property="id" /> <!-- 与ProcColumn表绑定id -->
+		<result column="PROC_COLUMN_ID" property="procColumnId" />
+		<result column="STEP" property="step" />
+		<result column="ROLE_NAME" property="roleName" />
+		<result column="MEMBER" property="member" />
+		<result column="MEMBER_NAME" property="memberName" />
+	</resultMap>
+	<!-- 字段绑定结束 -->
+	<!-- 保存 -->
+	<insert id="save"  keyProperty="id" useGeneratedKeys="true" parameterType="com.uoumei.activity.entity.ProcColumnStepsEntity">
+		insert into proc_column_steps (id,proc_column_id,step,role_name,member,member_name) VALUES (#{id},#{procColumnId},#{step},#{roleName},#{member},#{memberName});
+	</insert>
+	<!-- 
+	<update id="update" parameterType="com.uoumei.activity.entity.ProcColumnEntity">
+		update proc_column_steps set name = #{name},description=#{description},sort=#{sort},app_id=#{appId},column_id=#{columnId},proc_key=#{procKey}
+		where id=#{id}
+	</update> -->
+
+	<select id="queryByProcColumnId" resultMap="resultMap">
+		SELECT * FROM proc_column_steps where PROC_COLUMN_ID = #{procColumnId} ORDER BY step;
+	</select>
+	<!-- 删除 -->
+	<delete id="delete">
+		delete from proc_column_steps where proc_column_id = #{procColumnId}
+	</delete>
+	<select id="queryManName" resultMap="resultMap">
+		SELECT member_name FROM proc_column_steps where PROC_COLUMN_ID = #{procColumnId};
+	</select>
+	
+	
+</mapper>

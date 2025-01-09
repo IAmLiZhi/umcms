@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uoumei.mwebsite.dao.IWebsiteLogDao">
+	<cache />
+	<!-- 字段绑定 开始 -->
+	<resultMap type="com.uoumei.mwebsite.entity.WebsiteLogEntity" id="resultMap">
+		<id column="al_id" property="logId" />
+		<result column="al_datetime" property="logDatetime" />
+		<result column="al_ip" property="logIp" />
+		<result column="al_app_id" property="logAppId" />
+		<result column="al_is_mobile" property="logIsMobile" />
+	</resultMap>
+	<!-- 字段绑定结束 -->
+
+	<!-- 添加website信息开始 -->
+	<insert id="saveEntity" parameterType="com.uoumei.base.entity.BaseEntity">
+		insert into app_log
+
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="logDatetime != null">al_datetime,</if>
+			<if test="logIp != null">al_ip,</if>
+			<if test="logAppId != null">al_app_id,</if>
+			<if test="logIsMobile != null">al_is_mobile</if>
+		</trim>
+
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="logDatetime !=  null">#{logDatetime},</if>
+			<if test="logIp != null">#{logIp},</if>
+			<if test="logAppId != null">#{logAppId},</if>
+			<if test="logIsMobile != null">#{logIsMobile},</if>
+		</trim>
+
+	</insert>
+
+	<select id="queryByPage" resultMap="resultMap">
+		select * from app_log order by
+		al_id desc limit ${pageNo*pageSize},#{pageSize}
+	</select>
+
+	<select id="queryCount" resultType="int">
+		select count(al_id) from app_log
+	</select>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 互动交流(回复)持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.IInteractionReplyDao">
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.InteractionReplyEntity"
+		id="resultMap">
+		<id column="id" property="id" />	<!-- 主键id -->
+		<result column="publish_id" property="publishId" />	<!-- 绑定interaction_publish表 id -->
+		<result column="reply_content" property="replyContent" />	<!-- 回复内容 -->
+		<result column="reply_time" property="replyTime" />	<!-- 回复时间 -->
+		<result column="isopen" property="isOpen" />	<!-- 是否公开 -->
+	</resultMap>
+
+	<!-- 保存发布 -->
+	<insert id="save" keyProperty="id" useGeneratedKeys="true"
+		parameterType="com.uoumei.cms.entity.InteractionReplyEntity">
+		insert into interaction_reply
+		(id,publish_id,reply_content,reply_time,isopen)
+		VALUES
+		(#{id},#{publishId},#{replyContent},#{replyTime},#{isOpen});
+	</insert>
+
+	<!-- 删除信息 开始 -->
+	<delete id="deleteEntity" parameterType="int">
+		DELETE FROM
+		interaction_reply
+		WHERE publish_id=#{id};
+	</delete>
+
+	<!-- 修改发布 -->
+	<update id="update" >
+		update interaction_reply SET
+		reply_content =#{replyContent},reply_time =#{replyTime},isopen =#{isOpen} where
+		publish_id=#{publishId}
+	</update>
+
+
+
+</mapper>

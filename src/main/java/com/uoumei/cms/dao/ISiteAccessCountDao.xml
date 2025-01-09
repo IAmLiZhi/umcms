@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 日统计页数访问情况表持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.ISiteAccessCountDao">
+	<!-- 日统计页数访问情况表名 开始 -->
+	<sql id="column_list">
+		access_count_id,page_count,visitors,statistic_date,app_id
+	</sql>
+	<!-- 日统计页数访问情况表名 结束 -->
+
+
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.SiteAccessCount" id="resultMap">
+		<id column="access_count_id" property="accessCountId" />				<!-- 访问数量Id -->
+		<result column="page_count" property="pageCount" />	<!-- 访问页数 -->
+		<result column="visitors" property="visitors" />		<!-- 用户数 -->
+		<result column="statistic_date" property="statisticDate" />			<!-- 统计日期 -->
+		<result column="app_id" property="appId" />		<!-- 站点id -->
+	</resultMap>
+
+	<insert id="save" keyProperty="accessCountId" useGeneratedKeys="true"
+		parameterType="com.uoumei.cms.entity.SiteAccessCount">
+		insert into site_access_count
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="pageCount != null">page_count,</if>
+			<if test="visitors != null">visitors,</if>
+			<if test="statisticDate != null">statistic_date,</if>
+			<if test="appId != null">app_id,</if>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="pageCount != null">#{pageCount},</if>
+			<if test="visitors != null">#{visitors},</if>
+			<if test="statisticDate != null">#{statisticDate},</if>
+			<if test="appId != null">#{appId},</if>
+		</trim>
+	</insert>
+</mapper>

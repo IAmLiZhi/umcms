@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uoumei.basic.dao.IBasicDao">
+
+	<sql id="column_list">
+		BASIC_ID,BASIC_TITLE,BASIC_DESCRIPTION,BASIC_THUMBNAILS,BASIC_HIT,BASIC_DATETIME,BASIC_UPDATETIME,BASIC_PEOPLEID,BASIC_CATEGORYID,BASIC_APPID,del
+	</sql>
+
+	<resultMap id="resultMap" type="com.uoumei.basic.entity.BasicEntity">
+		<id column="BASIC_ID" property="basicId" />
+		<result column="BASIC_TITLE" property="basicTitle" />
+		<result column="BASIC_DESCRIPTION" property="basicDescription" />
+		<result column="BASIC_THUMBNAILS" property="basicThumbnails" />
+		<result column="BASIC_HIT" property="basicHit" />
+		<result column="BASIC_DATETIME" property="basicDateTime" />
+		<result column="BASIC_UPDATETIME" property="basicUpdateTime" />
+		<result column="BASIC_PEOPLEID" property="basicPeopleId" />
+		<result column="BASIC_CATEGORYID" property="basicCategoryId" />
+		<result column="BASIC_APPID" property="basicAppId" />
+		<result column="BASIC_APPID" property="basicAppId" />
+		<result column="del" property="basicDel" />
+	</resultMap>
+	<sql id="insertColumns">
+	    <if test="basicTitle != null">basic_title,</if>
+		<if test="basicDescription != null">basic_description,</if>
+		<if test="basicThumbnails != null">basic_thumbnails,</if>
+		<if test="basicHit != null">basic_hit,</if>
+		<if test="basicCategoryId != null and basicCategoryId &gt; 0">BASIC_CATEGORYID,</if>
+		<if test="basicPeopleId != null">BASIC_PEOPLEID,</if>
+		<if test="basicDateTime != null">BASIC_Datetime,</if>
+		<if test="basicUpdateTime != null">BASIC_updatetime,</if>
+		<if test="basicAppId != null">BASIC_APPID,</if>
+		<if test="basicSort != null">BASIC_SORT,</if>
+		<if test="basicType != null">BASIC_TYPE,</if>
+		<if test="basicModelId != null">BASIC_MODELID,</if>
+		<if test="basicDisplay != null">basic_display,</if>
+	</sql>
+	<sql id="insertValues">
+	    <if test="basicTitle != null">#{basicTitle},</if>
+		<if test="basicDescription != null">#{basicDescription},</if>
+		<if test="basicThumbnails != null">#{basicThumbnails},</if>
+		<if test="basicHit != null">#{basicHit},</if>
+		<if test="basicCategoryId != null and basicCategoryId &gt; 0">#{basicCategoryId},</if>
+		<if test="basicPeopleId != null">#{basicPeopleId},</if>
+		<if test="basicDateTime != null">#{basicDateTime},</if>
+		<if test="basicUpdateTime != null">#{basicUpdateTime},</if>
+		<if test="basicAppId != null">#{basicAppId},</if>
+		<if test="basicSort != null">#{basicSort},</if>
+		<if test="basicType != null">#{basicType},</if>
+		<if test="basicModelId != null">#{basicModelId},</if>
+		<if test="basicDisplay != null">#{basicDisplay},</if>
+	</sql>
+	<!-- mysql或SqlServer添加开始 -->
+	<insert id="saveEntity" useGeneratedKeys="true" keyProperty="basicId" parameterType="com.uoumei.base.entity.BaseEntity">
+		 insert into basic
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<include refid="insertColumns"></include>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<include refid="insertValues"></include>
+		</trim>
+	</insert>
+	<!-- mysql或SqlServer添加结束 -->
+	<!-- oracle添加 开始 -->
+	<insert id="saveEntity" useGeneratedKeys="false" parameterType="com.uoumei.base.entity.BaseEntity" databaseId="oracle">
+		<selectKey resultType="Integer"  keyProperty="basicId" order="BEFORE">
+			select seq_basic_id.nextval as basicId from dual
+		</selectKey>
+		insert into basic
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			BASIC_ID,
+			<include refid="insertColumns"></include>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{basicId},
+			<include refid="insertValues"></include>
+		</trim>
+	</insert>
+	<!-- oracle添加结束 -->
+	<!-- 更新开始 -->
+	<update id="updateEntity" parameterType="com.uoumei.base.entity.BaseEntity">
+		update basic
+		<set>
+			<if test="basicTitle != null">basic_title=#{basicTitle},</if>
+			<if test="basicDescription != null">basic_description=#{basicDescription},</if>
+			<if test="basicThumbnails != null">BASIC_THUMBNAILS=#{basicThumbnails},</if>
+			<if test="basicHit != null and basicHit &gt; 0">BASIC_HIT=#{basicHit},</if>
+			<if test="basicUpdateTime != null">BASIC_UPDATETIME=#{basicUpdateTime},</if>
+			<if test="basicPeopleId != null and basicPeopleId &gt; 0">BASIC_PEOPLEID=#{basicPeopleId},</if>
+			<if test="basicCategoryId != null and basicCategoryId &gt; 0">BASIC_CATEGORYID=#{basicCategoryId},</if>
+			<if test="basicDateTime != null">BASIC_Datetime=#{basicDateTime},</if>
+			<if test="basicSort != null and basicSort &gt; 0">BASIC_SORT=#{basicSort},</if>
+			<if test="basicComment != null and basicComment &gt; 0">BASIC_COMMENT=#{basicComment},</if>
+			<if test="basicCollect != null and basicCollect &gt; 0">BASIC_SORT=#{basicCollect},</if>
+			<if test="basicShare != null and basicShare &gt; 0">BASIC_SHARE=#{basicShare},</if>
+			<if test="basicType != null ">basic_type=#{basicType},</if>
+			<if test="basicDisplay != null ">basic_display=#{basicDisplay},</if>
+			<if test="basicDel != null ">del=#{basicDel},</if>
+		</set>
+		where basic_id = #{basicId}
+	</update>
+	<delete id="deleteEntity" parameterType="int">
+		delete from basic where
+		basic_id = #{basicId}
+	</delete>
+	<delete id="deleteEntityByAppId" parameterType="int">
+		delete from basic where
+		basic_id = #{basicId} and basic_appid=#{appId}
+	</delete>	
+	<!-- 更新结束 -->
+
+	<!-- 根据ID查询开始 -->
+	<select id="getEntity" resultMap="resultMap" parameterType="int">
+		select
+		<include refid="column_list" />
+		from basic where basic_id=#{basicId}
+	</select>
+	<!-- 根据ID查询结束 -->
+	
+	<!-- 查询query -->
+	<sql id="queryBasicWhere">
+		<if test=" appId !=null">
+			and basic_appid=#{appId}
+		</if>
+		<if test=" categoryId > 0">
+			and basic_categoryid=#{categoryId}
+		</if>
+		<if test="modelId != null">
+			and basic_modelId = #{modelId}
+		</if>
+		and del=0
+	</sql>
+	<sql id="queryBasicOrderby">
+		<if test=" orderField != null">
+		     order by #{orderField}
+		     <if test=" ad != null">
+				#{ad}
+			 </if>
+		</if>
+		<if test=" orderField == null">
+			order by basic_id desc
+		</if>
+	</sql>
+	<!-- MySQL分页 -->
+	<select id="query" resultMap="resultMap" parameterType="int" databaseId="mysql">
+		select
+		<include refid="column_list" />
+		from basic
+		<where>
+			<include refid="queryBasicWhere"></include>
+			<if test=" keyWord !=null ">
+				and basic_title like CONCAT('%',#{keyWord},'%') 
+			</if>
+		</where>
+			<include refid="queryBasicOrderby"></include>
+			<if test=" begin !=null ">
+				limit #{begin}
+			</if>
+			<if test=" end !=null ">
+				,#{end}
+			</if>
+	</select>
+	<!-- oracle分页 -->
+	<select id="query" resultMap="resultMap" parameterType="int" databaseId="oracle">
+		select
+		<include refid="column_list" />
+		from 
+		<if  test=" end !=null ">
+			( SELECT b.*, ROWNUM RN FROM ( SELECT * FROM basic <include refid="queryBasicOrderby"></include>) b WHERE ROWNUM &lt;= #{end} )
+		</if>
+		<if  test=" end == null ">
+			basic
+		</if>
+		<where>
+			<include refid="queryBasicWhere"></include>
+			<if test=" keyWord !=null ">
+				and basic_title like '%'||#{ keyWord}||'%' 
+			</if>
+			<if test=" begin !=null ">
+				and RN &gt; #{begin}
+			</if>
+		</where>
+			
+	</select>
+	<!-- SqlServer分页 -->
+	<select id="query" resultMap="resultMap" parameterType="int" databaseId="sqlServer">
+		select
+		<include refid="column_list" />
+		from
+		<if  test=" end !=null ">
+			(select *, ROW_NUMBER() OVER(Order by  
+			<if test=" orderField == null">
+				 basic_id desc
+			</if> 
+			<if test=" orderField != null">
+		     	 #{orderField}
+		     	<if test=" ad != null">
+					#{ad}
+				</if>
+			</if>
+			) AS RowId from basic ) as b
+		</if>
+		<if  test=" end == null ">
+			basic
+		</if>
+		<where>
+			<include refid="queryBasicWhere"></include>
+			<if test=" keyWord !=null ">
+				and basic_title like '%'+#{ keyWord}+'%' 
+			</if>
+		</where>
+			<if test=" begin !=null ">
+				RowId between #{begin}
+			</if>
+			<if test=" end !=null ">
+				and #{end}
+			</if>
+	</select>
+	<!-- 更新文章点击次数 -->
+	<update id="updateHit">
+		update basic set
+		<if test="num!=null">
+			basic_hit = #{num}
+		</if>
+		<if test="num==null">
+			basic_hit = basic_hit+1
+		</if>
+		where basic_id=#{basicId}
+	</update>
+	
+	<!-- 根据basicID删除开始-->
+	<delete id="delete" >
+		delete from basic
+		<where>
+			basic_id  in <foreach collection="ids" item="item" index="index" 
+			open="(" separator="," close=")">#{item}</foreach>
+		</where>
+	</delete>
+</mapper>

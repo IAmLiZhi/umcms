@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- 配置cxf -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<!-- cxf版本低于3.0去掉下面注释 -->
+	<!-- 
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	 -->
+	<bean id="articlePushServiceBean" class="com.uoumei.webservice.biz.impl.ArticlePushBizImpl" />
+	<jaxws:server id="articlePushService" serviceClass="com.uoumei.webservice.biz.IArticlePushBiz" address="/articlepush">
+		<jaxws:serviceBean>
+			<!-- 要暴露的 bean 的引用 -->
+			<ref bean="articlePushServiceBean" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+	
+
+</beans>

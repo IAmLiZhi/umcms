@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 小时数据统计表持久化层配置文件 -->
+<mapper namespace="com.uoumei.cms.dao.ISiteAccessCountHourDao">
+	<!-- 小时数据统计表名 开始 -->
+	<sql id="column_list">
+		access_count_hour_id,hour_pv,hour_ip,hour_uv,access_date,access_hour,app_id
+	</sql>
+	<!-- 小时数据统计表名 结束 -->
+
+
+	<!-- 获取表字段 开始 -->
+	<resultMap type="com.uoumei.cms.entity.SiteAccessCountHour"
+		id="resultMap">
+		<id column="access_count_hour_id" property="accessCountHourId" />				<!-- 小时访问数量Id -->
+		<result column="hour_pv" property="hourPv" />	<!-- 小时PV -->
+		<result column="hour_ip" property="hourIp" />		<!-- 小时IP -->
+		<result column="hour_uv" property="hourUv" />			<!-- 小时访客数 -->
+		<result column="access_date" property="accessDate" />		<!-- 访问日期 -->
+		<result column="access_hour" property="accessHour" />			<!-- 访问小时 -->
+		<result column="app_id" property="appId" />	<!-- 站点id -->
+	</resultMap>
+
+	<!-- 昨日数据统计 -->
+	<select id="getList" resultMap="resultMap">
+		select bean.hour_pv,bean.hour_ip,bean.hour_uv,bean.access_hour from site_access_count_hour bean
+		<if test="date != null">
+			where bean.access_date =#{date}
+		</if>
+
+	</select>
+
+	<!-- 添加小时数据统计 开始 -->
+	<insert id="save" keyProperty="accessCountHourId"
+		useGeneratedKeys="true" parameterType="com.uoumei.cms.entity.SiteAccessCountHour">
+		insert into site_access_count_hour
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="hourPv != null">hour_pv,</if>
+			<if test="hourIp != null">hour_ip,</if>
+			<if test="hourUv != null">hour_uv,</if>
+			<if test="accessDate != null">access_date,</if>
+			<if test="accessHour != null">access_hour,</if>
+			<if test="appId != null">app_id,</if>
+		</trim>
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="hourPv != null">#{hourPv},</if>
+			<if test="hourIp != null">#{hourIp},</if>
+			<if test="hourUv != null">#{hourUv},</if>
+			<if test="accessDate != null">#{accessDate},</if>
+			<if test="accessHour != null">#{accessHour},</if>
+			<if test="appId != null">#{appId},</if>
+		</trim>
+	</insert>
+	<!-- 添加小时数据统计 结束 -->
+
+</mapper>

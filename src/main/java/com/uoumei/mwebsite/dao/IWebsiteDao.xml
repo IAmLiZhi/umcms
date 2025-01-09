@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uoumei.mwebsite.dao.IWebsiteDao">
+	 <cache />
+	<!-- 字段绑定 开始 -->
+	<resultMap type="com.uoumei.mwebsite.entity.WebsiteEntity" id="resultMap">
+		<id column="APP_ID" property="websiteId" /><!-- 与website表绑定id -->
+		<result column="APP_PAY_DATE" property="websitePayDate" />
+		<result column="APP_PAY" property="websitePay" />
+		<result column="APP_KEYWORD" property="websiteKeyword" /><!-- 与website表绑定keyword -->
+		<result column="APP_COPYRIGHT" property="websiteCopyright" /><!-- 与website表绑定copyright -->
+		<result column="APP_STYLE" property="websiteStyle" /><!-- 与website表绑定style -->
+		<result column="APP_URL" property="websiteUrl" /><!-- 与website表绑定url -->
+		<result column="APP_MANAGERID" property="websiteManagerId" /><!-- 与website表绑定管理员id -->
+		<result column="APP_NAME" property="websiteName" />
+		<result column="APP_DESCRIPTION" property="websiteDescription" />
+		<result column="APP_LOGO" property="websiteLogo" />
+		<result column="APP_DATETIME" property="websiteDatetime" />
+		<result column="APP_STATE" property="websiteState" />
+		<result column="APP_MOBILE_STATE" property="websiteMobileState" />
+		<result column="APP_MOBILE_STYLE" property="websiteMobileStyle" />
+	</resultMap>
+	<!-- 字段绑定结束 -->
+
+	<!-- 添加website信息开始 -->
+	<insert id="saveEntity"  useGeneratedKeys="true" keyProperty="websiteId" parameterType="com.uoumei.base.entity.BaseEntity" flushCache="true">
+		insert into app
+
+		<!-- 添加表字段 -->
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="websiteName!= null">APP_NAME,</if>
+			<if test="websiteDescription!= null">APP_DESCRIPTION,</if>
+			<if test="websiteLogo!= null">APP_LOGO,</if>
+			<if test="websiteDatetime!=null">APP_DATETIME,</if>
+			<if test="websiteKeyword!= null">APP_KEYWORD,</if><!-- 添加关键字 -->
+			<if test="websiteCopyright!= null">APP_COPYRIGHT,</if><!-- 添加版权信息 -->
+			<if test="websiteStyle!= null">APP_STYLE,</if><!-- 添加模板风格 -->
+			<if test="websiteUrl!= null">APP_URL,</if><!-- 添加域名 -->
+			<if test="websiteManagerId &gt;0 ">APP_MANAGERID,</if><!-- 添加管理员id -->
+			<if test="websiteMobileStyle != null">APP_MOBILE_STYLE,</if><!-- 添加手机端模版 -->
+			<if test="websitePayDate != null">APP_PAY_DATE,</if><!-- 应用续费时间 -->
+			<if test="websiteMobileState != null">APP_MOBILE_STATE,</if>
+			<if test="websiteState != null">APP_STATE,</if>
+			<if test="websitePay != null">APP_PAY,</if><!-- 应用费用清单 -->
+		</trim>
+
+		<!-- 注入控制层字段 -->
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="websiteName !=  null">#{websiteName},</if>
+			<if test="websiteDescription != null">#{websiteDescription},</if>
+			<if test="websiteLogo != null">#{websiteLogo},</if>
+			<if test="websiteDatetime !=null">#{websiteKeyword},</if>
+			<if test="websiteKeyword != null">#{websiteKeyword},</if><!-- 添加内容 -->
+			<if test="websiteCopyright != null">#{websiteCopyright},</if><!-- 添加版权信息 -->
+			<if test="websiteStyle != null">#{websiteStyle},</if><!-- 添加模板风格 -->
+			<if test="websiteUrl != null">#{websiteUrl},</if><!-- 添加域名 -->
+			<if test="websiteManagerId &gt;0 ">#{websiteManagerId},</if><!-- 添加管理员id -->
+			<if test="websiteMobileStyle != null">#{websiteMobileStyle},</if>
+			<if test="websitePayDate != null">#{websitePayDate},</if>
+			<if test="websiteMobileState != null">#{websiteMobileState},</if>
+			<if test="websiteState != null">#{websiteState},</if>
+			<if test="websitePay != null">#{websitePay},</if>
+		</trim>
+
+	</insert>
+	<!-- 添加website信息结束 -->
+
+	<!-- 删除website开始 -->
+	<delete id="deleteEntity" parameterType="int" flushCache="true">
+		delete from app
+		where
+		APP_id = #{appId}
+	</delete>
+	<delete id="delete"  flushCache="true">
+		delete from app
+		where
+		APP_id in 	
+		<foreach collection="ids" item="id" open="("
+			separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>	
+	<!-- 删除website结束 -->
+
+	<!-- 更新website开始 -->
+	<update id="updateEntity" parameterType="com.uoumei.base.entity.BaseEntity" flushCache="true">
+		update app
+		<set>
+			<if test="websiteName != null">APP_NAME =#{websiteName},</if>
+			<if test="websiteDescription != null">APP_DESCRIPTION =#{websiteDescription},</if>
+			<if test="websiteLogo != null">APP_LOGO =#{websiteLogo},</if>
+			<if test="websiteDatetime != null">APP_DATETIME =#{websiteDatetime},</if>
+			<if test="websiteKeyword != null">APP_keyword =#{websiteKeyword},</if>
+			<if test="websiteCopyright != null">APP_copyright =#{websiteCopyright},</if>
+			<if test="websiteStyle != null">APP_style =#{websiteStyle},</if>
+			<if test="websiteUrl!= null">APP_URL=#{websiteUrl},</if>
+			<if test="websiteManagerId &gt;0 ">APP_managerId=#{websiteManagerId},</if>
+			<if test="websiteMobileStyle != null">APP_MOBILE_STYLE=#{websiteMobileStyle},</if>
+			<if test="websitePayDate != null">APP_PAY_DATE=#{websitePayDate},</if>
+			<if test="websitePay != null">APP_PAY=#{websitePay},</if>
+			<if test="websiteState != null">APP_STATE=#{websiteState},</if>
+			<if test="websiteMobileState != null">APP_MOBILE_STATE=#{websiteMobileState},</if>
+		</set>
+		where APP_Id = #{websiteId}
+	</update>
+	<!-- 更新website结束 -->
+
+	<!-- 查询所有website开始 -->
+	<select id="query" resultMap="resultMap" parameterType="com.uoumei.mwebsite.entity.WebsiteEntity">
+		select * from app 
+		<where>
+			<if test="websiteName != null">and APP_NAME like CONCAT('%',#{websiteName},'%')</if>
+		</where>
+		order by
+		app_id desc
+	</select>
+	<!-- 查询所有website结束 -->
+
+	<!-- 对website进行分页查询开始 -->
+	<select id="queryByPage" resultMap="resultMap">
+		<!--shiahbasic和 basic间进行连接查询 -->
+		select *
+		from app
+		order by app_id desc
+		limit ${pageNo*pageSize},#{pageSize}
+	</select>
+	<!-- 查询所有website结束 -->
+
+	<!-- 查询记录总数 开始 -->
+	<select id="queryCount" resultType="int">
+		select count(app_id) from app
+	</select>
+	<!-- 查询记录总数 结束 -->
+
+	<!-- 根据ID查询开始 -->
+	<select id="getEntity" resultMap="resultMap" parameterType="int">
+		select * from app
+		where APP_id = #{appId}
+	</select>
+
+	<!-- 根据域名查找站点实体 -->
+	<select id="getByUrl" resultMap="resultMap" parameterType="String">
+		select *
+		from app
+		where  APP_URL like CONCAT('%',#{appUrl},'%') limit 0,1
+	</select>
+
+	<!-- 根据ID查询结束 -->
+
+	<!-- 根据域名查询 -->
+	<select id="countByUrl" resultType="int" parameterType="String">
+		select
+		count(app_id)
+		from app
+		where
+		REPLACE(APP_URL,"/","") =
+		REPLACE(#{appUrl},"/","")
+	</select>
+	<!-- 根据域名查询结束 -->
+
+	<!-- 根据站点管理员id查找 -->
+	<select id="getByManagerId" resultMap="resultMap" parameterType="int">
+		select * from app where APP_MANAGERID =
+		#{appManagerId}
+	</select>
+	
+	<!-- 新增角色开始 -->
+	<insert id="saveRole" parameterType="com.uoumei.basic.entity.RoleEntity">
+		insert into role
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="roleId != null">ROLE_ID,</if>
+			<if test="roleName != null">ROLE_NAME,</if>
+			<if test="appId &gt; -1">app_id,</if>
+			<if test="roleManagerId != null">ROLE_MANAGERID</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="roleId != null">#{roleId},</if>
+			<if test="roleName != null">#{roleName},</if>
+			<if test="appId &gt; -1">#{appId},</if>
+			<if test="roleManagerId != null">#{roleManagerId}</if>
+		</trim>
+	</insert>
+	<!-- 新增角色结束 -->
+</mapper>
