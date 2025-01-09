@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="index">
+        <div class="main">
+            <ul>
+                {ms:arclist flag=w,h size=6 typeid=295 orderby=date order=desc}
+                    <li><a href="[field.link/]" target="_blank">[field.title/]</a><img src="{ms:globalskin.url/}/image/new.png"/><span class="date">[field.date fmt=yyyy-MM-dd/]</span></li>
+                {/ms:arclist}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
