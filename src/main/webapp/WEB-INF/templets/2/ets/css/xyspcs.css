@@ -1,0 +1,218 @@
+.xyspcs>.nav{
+    min-width: 1026px;
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+}
+.xyspcs>.nav>ul{
+    overflow: hidden;
+    width: 1025px;
+    margin: 0 auto;
+}
+.xyspcs>.nav>ul>li{
+    width: 92px;
+    float: left;
+    text-align: center;
+    height: 46px;
+}
+.xyspcs>.nav>ul>li>a{
+    display: block;
+    height: 100%;
+    line-height: 46px;
+    color: #ffffff;
+    width: 100%;
+}
+.xyspcs>.first{
+    background-color: #3579CF;
+}
+.xyspcs>.first>ul>li.active,.xyspcs>.first>ul>li:hover{
+    background-color: #3BA2E5;
+}
+.xyspcs>.first>ul>.input-box{
+    margin: 12px 0 0;
+    float: right;
+    width: 157px;
+    height: 21px;
+    background-color: #ffffff;
+    padding-left: 9px;
+}
+.xyspcs>.first>ul>.input-box input{
+    width: 117px;
+    margin-top: 3px;
+    border: 0;
+    border-right: 1px solid #C4C4C4;
+}
+.xyspcs>.first>ul>.input-box p{
+    float: right;
+    padding: 0 7px;
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+
+.xyspcs>.second{
+    background-color: #5693F0;
+}
+.xyspcs>.second>ul>li:hover,.xyspcs>.second>ul>li.active{
+    background-color: #35bafe;
+}
+.xyspcs>.second>ul>.date{
+    margin: 14px 0 0;
+    color: #ffffff;
+    float: right;
+}
+.xyspcs>.main{
+    width: 1026px;
+    margin: 14px auto 30px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #DFDFDF;
+
+}
+.xyspcs>.main>div{
+    float: left;
+    background-color: #ffffff;
+}
+.xyspcs>.main>.left{
+    width: 240px;
+    background-image: url(../image/left-bg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    padding-bottom: 20px;
+}
+.xyspcs>.main>.left>div>img{
+    width: 100%;
+    display: block;
+}
+.xyspcs>.main>.left>.top>div{
+    margin: 0 14px;
+}
+.xyspcs>.main>.left>.top>div>p{
+    border-bottom: 1px solid #579AF5;
+    margin-top: 14px;
+}
+.xyspcs>.main>.left>.top>div>p>a{
+    display: inline-block;
+    padding: 0 10px 4px 0;
+    border-bottom: 2px solid #579AF5;
+    font-size: 16px;
+    color: #579AF5;
+}
+.xyspcs>.main>.left>.top>div>ul{
+    margin-top: 3px;
+    height: 121px;
+}
+.xyspcs>.main>.left>.top>div>ul>li{
+    margin-top: 14px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.xyspcs>.main>.left>.top>div>ul>li:before{
+    content: '\2022';
+    font-weight: bolder;
+    color: #579AF5;
+    margin-right: 6px;
+}
+.xyspcs>.main>.left>.top>div>ul>li>a{
+    width: 165px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+}
+.xyspcs>.main>.left>.top>div>ul>li>span{
+    float: right;
+    color: #666666;
+}
+.xyspcs>.main>.middle{
+    width: 585px;
+    border-left: 1px solid #DFDFDF;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.xyspcs>.main>.middle>div{
+    margin: 21px 17px 0 16px;
+    overflow: hidden;
+}
+.xyspcs>.main>.middle>.title-tzgg{
+    border-bottom: 2px solid #F35526;   
+}
+.xyspcs>.main>.middle>.title-zcfg{
+    border-bottom: 2px solid #0867F2;   
+}
+.xyspcs>.main>.middle>.title-zsjz{
+    border-bottom: 2px solid #0196A4;   
+}
+.xyspcs>.main>.middle>div>.one{
+    width: 157px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.xyspcs>.main>.middle>div>.one>img{
+    width: 157px;
+    height: 38px;
+}
+.xyspcs>.main>.middle>div>.two{
+    float: right;
+    margin-top: 12px;
+}
+.xyspcs>.main>.middle>.title-tzgg>.two{
+    color: #F35526;   
+}
+.xyspcs>.main>.middle>.title-zcfg>.two{
+    color: #0867F2;   
+}
+.xyspcs>.main>.middle>.title-zsjz>.two{
+    color:  #0196A4;   
+}
+.xyspcs>.main>.middle>ul{
+    margin: 0 18px 0 17px;
+    height: 186px;
+}
+.xyspcs>.main>.middle>ul>li{
+    margin-top: 18px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.xyspcs>.main>.middle>ul>li:before{
+    content: '\2022';
+    color: #535353;
+    font-weight: bolder;
+    margin-right: 6px;
+}
+.xyspcs>.main>.middle>ul>li>img{
+    width: 24px;
+}
+.xyspcs>.main>.middle>ul>li>a{
+    display: inline-block;
+    color: #333333;
+    width: 430px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.xyspcs>.main>.middle>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+.xyspcs>.main>.right{
+    width: 199px;
+    border-left: 1px solid #DFDFDF;
+}
+.xyspcs>.main>.right>ul{
+    margin: 0 12px;
+}
+.xyspcs>.main>.right>ul>li{
+    margin-top: 17px;
+}
+.xyspcs>.main>.right>ul>li>a{
+    display: block;
+}
+.xyspcs>.main>.right>ul>li>a>img{
+    display: block;
+    width: 100%;
+}

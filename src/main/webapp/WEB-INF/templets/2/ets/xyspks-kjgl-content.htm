@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {ms:include filename=head-file.htm/}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/xyspks-kjgl-content.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="xyspks-kjgl-content">
+            <div class="nav first">
+                <ul>
+                    <li><a href="{ms:global.url/}/57/index.html">首页</a></li>
+                    <li><a href="{ms:global.url/}/65/index.html">机构设置</a></li>
+                    <li><a href="{ms:global.url/}/67/index.html">服务指南</a></li>
+                    <li><a href="{ms:global.url/}/99/index.html">智慧党建</a></li>
+                    <div class="input-box">
+                        <a href="javascript:;">
+                            <input type="text" placeholder="输入关键词搜索">
+                            <p><img src="{ms:globalskin.url/}/image/header/search.png" alt=""></p>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+            <div class="nav second">
+                <ul>
+                    <li><a href="{ms:global.url/}/71/index.html">高考高招</a></li>
+                    <li><a href="{ms:global.url/}/75/index.html">研考研招</a></li>
+                    <li><a href="{ms:global.url/}/78/index.html">成考成招</a></li>
+                    <li class="active"><a href="{ms:global.url/}/85/index.html">学业水平</a></li>
+                    <li><a href="{ms:global.url/}/82/index.html">高中招生</a></li>
+                    <li><a href="{ms:global.url/}/89/index.html">内地班校</a></li>
+                    <li><a href="{ms:global.url/}/92/index.html">自学考试</a></li>
+                    <li><a href="{ms:global.url/}/95/index.html">社会考试</a></li>
+                    <li><a href="{ms:global.url/}/350/index.html">普通专升本</a></li>
+                    <p class="date"></p>
+                </ul>
+            </div>
+        <div class="main">
+            <p class="current-position"><a href="{ms:global.url/}/85/index.html">学业水平</a>&gt;{ms:channel type=self typeid=87}<a href="[field.typelink/]">[field.typetitle/]</a>{/ms:channel}&gt;正文</p>
+            <div class="content-box">
+                <h2>{ms:field.title/}</h2>
+                <div class="date-setting">
+                    <span class="date">{ms:field.date fmt=yyyy-MM-dd HH:mm/}</span>
+                    <span class="from">来源：{ms:field.source/}</span>
+                    <span class="author">作者：{ms:field.author/}</span>
+                    <span class="print">【打印页面】</span>
+                    <input type="hidden" id="id" value="{ms:field.id/}" />
+                </div>
+                <div class="content">
+                    {ms:field.content/}
+                </div>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/xyspks-kjgl-content.js"></script>
+</html>

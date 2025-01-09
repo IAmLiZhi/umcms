@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {ms:include filename=head-file.htm/}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/ndbxzs-ndyxdh.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="ndbxzs-ndyxdh">
+        <div class="nav first">
+            <ul>
+                <li><a href="{ms:global.url/}/57/index.html">首页</a></li>
+                <li><a href="{ms:global.url/}/65/index.html">机构设置</a></li>
+                <li><a href="{ms:global.url/}/67/index.html">服务指南</a></li>
+                <li><a href="{ms:global.url/}/99/index.html">智慧党建</a></li>
+                <div class="input-box">
+                    <a href="javascript:;">
+                        <input type="text" placeholder="输入关键词搜索">
+                        <p><img src="{ms:globalskin.url/}/image/header/search.png" alt=""></p>
+                    </a>
+                </div>
+            </ul>
+        </div>
+        <div class="nav second">
+            <ul>
+                <li><a href="{ms:global.url/}/71/index.html">高考高招</a></li>
+                <li><a href="{ms:global.url/}/75/index.html">研考研招</a></li>
+                <li><a href="{ms:global.url/}/78/index.html">成考成招</a></li>
+                <li><a href="{ms:global.url/}/85/index.html">学业水平</a></li>
+                <li><a href="{ms:global.url/}/82/index.html">高中招生</a></li>
+                <li class="active"><a href="{ms:global.url/}/89/index.html">内地班校</a></li>
+                <li><a href="{ms:global.url/}/92/index.html">自学考试</a></li>
+                <li><a href="{ms:global.url/}/95/index.html">社会考试</a></li>
+                    <li><a href="{ms:global.url/}/350/index.html">普通专升本</a></li>
+                <p class="date"></p>
+            </ul>
+        </div>
+        <div class="main">
+            <p class="current-position"><a href="{ms:global.url/}/89/index.html">内地班校</a>&gt;{ms:channel type=self typeid=131}[field.typetitle/]{/ms:channel}</p>
+            <div class="content-box">
+                <div class="title"><p><img src="{ms:globalskin.url/}/image/notice-blue.png" alt="">{ms:channel type=self typeid=131}[field.typetitle/]{/ms:channel}</p></div>
+                <ul>
+                    {ms:arclist flag=w,h size=15 typeid=131 ispaging=true orderby=date order=desc}
+                        <li><a href="[field.link/]" target="_blank">[field.title/]</a><span class="date">[field.date fmt=yyyy-MM-dd/]</span></li>
+                    {/ms:arclist}
+                </ul>
+                <div class="limit">
+                    <span>共{ms:page.rcount/}条信息</span><span class="pagenum">页数:{ms:page.cur/}/{ms:page.total/} </span><a href="{ms:page.index/}">首页</a><a
+                        class="prev" href="{ms:page.pre/}">上一页</a><a href="{ms:page.next/}">下一页</a><a class="last" href="{ms:page.last/}">末页</a><span>跳转至第
+                        <input type="text" class="goPage"> 页</span>
+                    <p class="img-box go"><img src="{ms:globalskin.url/}/image/go.png" alt=""></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/ndbxzs-ndyxdh.js"></script>
+</html>

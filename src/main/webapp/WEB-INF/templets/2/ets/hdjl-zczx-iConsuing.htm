@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/hdjl-zczx-iConsuing.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="nav first">
+        <ul>
+            <li><a href="{ms:global.url/}/57/index.html">首页</a></li>
+            <li><a href="{ms:global.url/}/65/index.html">机构设置</a></li>
+            <li><a href="{ms:global.url/}/67/index.html">服务指南</a></li>
+            <li><a href="{ms:global.url/}/99/index.html">智慧党建</a></li>
+            <div class="input-box">
+                <a href="javascript:;">
+                    <input type="text" placeholder="输入关键词搜索">
+                    <p><img src="{ms:globalskin.url/}/image/header/search.png" alt=""></p>
+                </a>
+            </div>
+        </ul>
+    </div>
+    <div class="nav second">
+        <ul>
+            <li><a href="{ms:global.url/}/71/index.html">高考高招</a></li>
+            <li><a href="{ms:global.url/}/75/index.html">研考研招</a></li>
+            <li><a href="{ms:global.url/}/78/index.html">成考成招</a></li>
+            <li><a href="{ms:global.url/}/85/index.html">学业水平</a></li>
+            <li><a href="{ms:global.url/}/82/index.html">高中招生</a></li>
+            <li><a href="{ms:global.url/}/89/index.html">内地班校</a></li>
+            <li><a href="{ms:global.url/}/92/index.html">自学考试</a></li>
+            <li><a href="{ms:global.url/}/95/index.html">社会考试</a></li>
+            <li><a href="{ms:global.url/}/350/index.html">普通专升本</a></li>
+            <p class="date"></p>
+        </ul>
+    </div>
+    <div class="main-box">
+        <p class="current-position">
+            当前位置:
+            {ms:channel type=self typeid=57}<a href="[field.typelink/]">[field:typetitle/]</a>{/ms:channel}
+            &gt;
+            {ms:channel type=self typeid=359}<a href="[field.typelink/]">[field:typetitle/]</a>{/ms:channel}
+            &gt;
+            <span class="parent"></span>
+            &gt;
+            <span class="son"></span>
+        </p>
+        <div class="content-box">
+            <div class="left" id="jdo">
+                <p><img src="{ms:globalskin.url/}/image/laba.png" alt="">写信须知</p>
+                <div>
+                    <p>一、请您填写真实姓名、住址和联系方式，以便承办单位调查核实和反馈办理结果；</p>
+                    <p>二、请您简明扼要填写信件内容，写清事情发生的时间、地点、简要经过、需要解决的问题和诉求；</p>
+                    <p>三、请您客观真实反映情况和问题，对所反映内容的真实性负责，不得捏造歪曲事实，不得诬告、陷害他人。</p>
+                </div>
+            </div>
+            <div class="left" id="jdt">
+                <p><img src="{ms:globalskin.url/}/image/laba.png" alt="">反映问题意见须知</p>
+                <div>
+                    <p>一、请您遵守宪法、法律、法规、规章以及社会公德。</p>
+                    <p>二、区教育厅党组进一步改进作风狠抓落实工作领导小组办公室将指定专人整理您反映的问题和意见，报领导阅示后转相关职能部门办理。</p>
+                    <p>三、写信时应内容完整、表述清楚，就事论事、详略得当，要避免分成几封信进行表述以及语言过激、出言不逊。</p>
+                    <p>四、写信后请留下您的真实姓名、手机号码、联系地址等，有关方面在处理时可以更好地与您联系，并及时将办理情况反馈给您。</p>
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <p class="inline-block"><img src="{ms:globalskin.url/}/image/connection/leave-word-blue.png" alt=""><span></span></p>
+                </div>
+<!--<p>发送邮件到xzjytbgs@163.com</p> -->
+ <form action="">
+                    <div class="name-phone">
+                        <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span><input class="small" id="name" type="text">
+                        <span class="inline-block">联系手机</span><input class="small" id="phone" type="text">
+                        <p class="prompt visibel"><span class="name visibel">请输入名字</span><span class="phone visibel">请输入正确的手机号</span></p>
+                    </div>
+                    <div class="id">
+                        <span class="inline-block">身份证号码</span><input class="small" id="id" type="text">
+                        <p class="prompt visibel"><span>请输入正确的手机号</span></p>
+                    </div>
+                    <div class="title">
+                        <span>标题</span><input id="title" type="text">
+                        <p class="prompt visibel"><span>请输入标题</span></p>
+                    </div>
+                    <div class="content">
+                        <span class="inline-block">内容</span><textarea name="" id="content"></textarea>
+                        <p class="prompt visibel"><span>请输入内容</span></p>
+                    </div>
+                    <div class="upload">
+                        <span>附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</span><input class="small" type="text" id="fileName" accept=".xls,.xlsx,.doc,.docx,.txt,.rtf,.jpg,.png,.mp3,.mp4" readonly><button>选择文件</button><input class="file" type="file" name="" id=""><span class="file-prompt none"></span>
+                        <p class="prompt"><span>*</span>选填，建议上传文件为word格式，大小不能超过<span>10M</span></p>
+                    </div>
+                    <button id="submit">提交信息</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mask none">
+        <div class="true none">
+            <img src="{ms:globalskin.url/}/image/true.png" alt="">
+            <p>信息提交成功</p>
+        </div>
+        <div class="false none">
+            <img src="{ms:globalskin.url/}/image/false.png" alt="">
+            <p>信息提交失败</p>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/hdjl-zczx-iConsuing.js"></script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/search.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="nav first">
+        <ul>
+            <li class="active"><a href="{ms:global.url/}/57/index.html">首页</a></li>
+            <li><a href="{ms:global.url/}/65/index.html">机构设置</a></li>
+            <li><a href="{ms:global.url/}/67/index.html">服务指南</a></li>
+            <li><a href="{ms:global.url/}/99/index.html">智慧党建</a></li>
+        </ul>
+        <!-- <div class="input-box">
+            <a href="javascript:;">
+                <input type="text" placeholder="输入关键词搜索">
+                <p><img src="{ms:globalskin.url/}/image/header/search.png" alt=""></p>
+            </a>
+        </div> -->
+    </div>
+    <div class="nav second">
+        <ul>
+            <li><a href="{ms:global.url/}/71/index.html">高考高招</a></li>
+            <li><a href="{ms:global.url/}/75/index.html">研考研招</a></li>
+            <li><a href="{ms:global.url/}/78/index.html">成考成招</a></li>
+            <li><a href="{ms:global.url/}/85/index.html">学业水平</a></li>
+            <li><a href="{ms:global.url/}/82/index.html">高中招生</a></li>
+            <li><a href="{ms:global.url/}/89/index.html">内地班校</a></li>
+            <li><a href="{ms:global.url/}/92/index.html">自学考试</a></li>
+            <li><a href="{ms:global.url/}/95/index.html">社会考试</a></li>
+                    <li><a href="{ms:global.url/}/350/index.html">普通专升本</a></li>
+            <p class="date"></p>
+        </ul>
+    </div>
+    <div class="main-box">
+        <p class="current-position">当前位置: <a href="{ms:global.url/}/57/index.html">首页</a> &gt; 搜索 &gt; <span>全部</span></p>
+        <div class="order-timer">
+            <p>排序方式</p>
+            <dl class="order">
+                <dd class="active down">按时间降序</dd>
+                <dd class="up">按时间升序</dd>
+            </dl>
+            <p class="">时间范围</p>
+            <dl class="timer">
+                <dd class="active">全部</dd>
+                <dd>一年内</dd>
+                <dd>一个月内</dd>
+                <dd>一周内</dd>
+            </dl>
+        </div>
+        <div class="search-content">
+            <div class="search-box">
+                <input type="text" id="searchInput"><button id="searchBtn">搜索</button>
+            </div>
+            <p class="search-result">为您找到相关结果 <span></span> 条</p>
+            <ul class="news">
+            </ul>
+            <div class="limit">
+                <p class="allNum">共<span></span>条信息</p><p class="pagenum">页数:<span class="current"></span>/<span class="all"></span></p><a href="javascript:;" id="home">首页</a><a
+                    class="prev" href="javascript:;">上一页</a><a href="javascript:;" id="next">下一页</a><a class="last" href="javascript:;">末页</a><span>跳转至第
+                    <input type="text" class="go"> 页</span>
+                <p class="img-box"><img src="{ms:globalskin.url/}/image/go.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/search.js"></script>
+</html>

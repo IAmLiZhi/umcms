@@ -1,0 +1,170 @@
+.shks-kwgl>.nav{
+    min-width: 1026px;
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+}
+.shks-kwgl>.nav>ul{
+    overflow: hidden;
+    width: 1025px;
+    margin: 0 auto;
+}
+.shks-kwgl>.nav>ul>li{
+    width: 92px;
+    float: left;
+    text-align: center;
+    height: 46px;
+}
+.shks-kwgl>.nav>ul>li>a{
+    display: block;
+    height: 100%;
+    line-height: 46px;
+    color: #ffffff;
+    width: 100%;
+}
+.shks-kwgl>.first>ul>li:hover,
+.shks-kwgl>.first>ul>li.active{
+    background-color: #3BA2E5;
+}
+.shks-kwgl>.second>ul>li:hover,
+.shks-kwgl>.second>ul>li.active{
+    background-color: #35bafe;
+}
+.shks-kwgl>.first{
+    background-color: #3579CF;
+}
+.shks-kwgl>.first>ul>.input-box{
+    margin: 12px 0 0;
+    float: right;
+    width: 157px;
+    height: 21px;
+    background-color: #ffffff;
+    padding-left: 9px;
+}
+.shks-kwgl>.first>ul>.input-box input{
+    width: 117px;
+    margin-top: 3px;
+    border: 0;
+    border-right: 1px solid #C4C4C4;
+}
+.shks-kwgl>.first>ul>.input-box p{
+    float: right;
+    padding: 0 7px;
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+.shks-kwgl>.second{
+    background-color: #5693F0;
+}
+.shks-kwgl>.second>ul>.date{
+    margin: 14px 0 0;
+    color: #ffffff;
+    float: right;
+}
+.shks-kwgl>.main{
+    width: 1025px;
+    margin: 0 auto 14px;
+}
+.shks-kwgl>.main>.current-position{
+    font-size: 14px;
+    color: #666666;
+    margin: 20px 0 11px 0;
+}
+.shks-kwgl>.main>.current-position a{
+    color: #666666;
+}
+.shks-kwgl>.main>div{
+    background-color: #ffffff;
+    border: 1px solid #DFDFDF;
+}
+.shks-kwgl>.main>div>.title{
+    border-bottom: 1px solid #579AF5;
+    padding-left: 27px;
+    margin-top: 17px;
+    margin: 17px 40px 0;
+}
+.shks-kwgl>.main>div>.title>p{
+    padding-bottom: 7px;
+    display: inline-block;
+    border-bottom: 2px solid #5693F0;
+}
+.shks-kwgl>.main>div>.title>p>img{
+    width: 20px;
+    height: 18px;
+    vertical-align: middle;
+    margin: -2px 11px 0 0;
+}
+.shks-kwgl>.main>div>ul{
+    margin: 0 51px 0 68px;
+}
+.shks-kwgl>.main>div>ul>li{
+    list-style: outside;
+    list-style-position: inside;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: 17px;
+}
+.shks-kwgl>.main>div>ul>li:first-of-type{
+    margin-top: 24px;
+}
+.shks-kwgl>.main>div>ul>li>a{
+    display: inline-block;
+    width: 464px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333333;
+}
+.shks-kwgl>.main>div>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+.shks-kwgl>.main>div>ul>li.bottom{
+    padding-bottom: 26px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.shks-kwgl>.main>div>.limit{
+    margin-top: 49px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.shks-kwgl>.main>div>.limit>a{
+    color: #666666;
+}
+.shks-kwgl>.main>div>.limit>span{
+    display: inline-block;
+}
+.shks-kwgl>.main>div>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.shks-kwgl>.main>div>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.shks-kwgl>.main>div>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.shks-kwgl>.main>div>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.shks-kwgl>.main>div>.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+}
+.shks-kwgl>.main>div>.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+}

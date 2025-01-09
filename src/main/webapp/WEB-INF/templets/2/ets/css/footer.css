@@ -1,0 +1,19 @@
+.footer{
+    background-color: #374259;
+    padding: 19px 0 54px;
+    min-width: 1026px;
+}
+.footer>ul{
+    text-align: center;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+.footer>ul>li{
+    margin-top: 18px;
+}
+.footer>ul>li>a{
+    color: #FFFFFF;
+}
+.footer>ul>li>a:hover{
+    color: #ff0000;
+}

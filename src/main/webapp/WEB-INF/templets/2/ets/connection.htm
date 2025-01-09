@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {ms:include filename=head-file.htm/}
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/connection.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="nav first">
+        <ul>
+            <li><a href="{ms:global.url/}/57/index.html">首页</a></li>
+            <li><a href="{ms:global.url/}/65/index.html">机构设置</a></li>
+            <li><a href="{ms:global.url/}/67/index.html">服务指南</a></li>
+            <li><a href="{ms:global.url/}/99/index.html">智慧党建</a></li>
+            <div class="input-box">
+                <a href="javascript:;">
+                    <input type="text" placeholder="输入关键词搜索">
+                    <p><img src="{ms:globalskin.url/}/image/header/search.png" alt=""></p>
+                </a>
+            </div>
+        </ul>
+    </div>
+    <div class="nav second">
+        <ul>
+            <li><a href="{ms:global.url/}/71/index.html">高考高招</a></li>
+            <li><a href="{ms:global.url/}/75/index.html">研考研招</a></li>
+            <li><a href="{ms:global.url/}/78/index.html">成考成招</a></li>
+            <li><a href="{ms:global.url/}/85/index.html">学业水平</a></li>
+            <li><a href="{ms:global.url/}/82/index.html">高中招生</a></li>
+            <li><a href="{ms:global.url/}/89/index.html">内地班校</a></li>
+            <li><a href="{ms:global.url/}/92/index.html">自学考试</a></li>
+            <li><a href="{ms:global.url/}/95/index.html">社会考试</a></li>
+            <li><a href="{ms:global.url/}/350/index.html">普通专升本</a></li>
+            <p class="date"></p>
+        </ul>
+    </div>
+    <div class="main-box">
+        <!-- <p class="current-position">
+            {ms:channel type=self typeid=57}<a href="[field.typelink/]">[field:typetitle/]</a>{/ms:channel}
+            &gt;
+            {ms:channel type=self typeid=359}[field:typetitle/]{/ms:channel}
+        </p> -->
+        <div class="connection-content">
+            <nav class="nav-left">
+                {ms:channel type=self typeid=366}
+                    <li class="active connection"><img src="{ms:globalskin.url/}/image/connection/connection-on.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=362}
+                    <li class=" policy-advice"><img src="{ms:globalskin.url/}/image/connection/policy-advice-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=363}
+                    <li class="report"><img src="{ms:globalskin.url/}/image/connection/report-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=364}
+                    <li class="feedback"><img src="{ms:globalskin.url/}/image/connection/feedback-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+                {ms:channel type=self typeid=365}
+                <li class="email"><img src="{ms:globalskin.url/}/image/connection/email-out.png" alt="">[field:typetitle/]</li>
+                {/ms:channel}
+            </nav>
+            <div class="iframe">
+                <iframe src="{ms:global.url/}/359/366/index.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/connection.js"></script>
+</html>

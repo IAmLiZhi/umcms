@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    line-height: 1;
+    outline: none;
+}
+/*  body *{
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%); 
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: grayscale(100%);
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+filter:gray;
+}  */
+body {
+    background-image: url('../image/header/header-bg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #F5F5F5;
+}
+button,img{
+    border: 0;
+}

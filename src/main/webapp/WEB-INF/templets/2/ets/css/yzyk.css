@@ -1,0 +1,263 @@
+.yzyk>.nav{
+    min-width: 1026px;
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+}
+.yzyk>.nav>ul{
+    overflow: hidden;
+    width: 1025px;
+    margin: 0 auto;
+}
+.yzyk>.nav>ul>li{
+    width: 92px;
+    float: left;
+    text-align: center;
+    height: 46px;
+}
+.yzyk>.nav>ul>li>a{
+    display: block;
+    height: 100%;
+    line-height: 46px;
+    color: #ffffff;
+    width: 100%;
+}
+.yzyk>.first{
+    background-color: #3579CF;
+}
+.yzyk>.first>ul>li.active,.yzyk>.first>ul>li:hover{
+    background-color: #3BA2E5;
+}
+.yzyk>.first>ul>.input-box{
+    margin: 12px 0 0;
+    float: right;
+    width: 157px;
+    height: 21px;
+    background-color: #ffffff;
+    padding-left: 9px;
+}
+.yzyk>.first>ul>.input-box input{
+    width: 117px;
+    margin-top: 3px;
+    border: 0;
+    border-right: 1px solid #C4C4C4;
+}
+.yzyk>.first>ul>.input-box p{
+    float: right;
+    padding: 0 7px;
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+
+.yzyk>.second{
+    background-color: #5693F0;
+}
+.yzyk>.second>ul>li:hover,.yzyk>.second>ul>li.active{
+    background-color: #35bafe;
+}
+.yzyk>.second>ul>.date{
+    margin: 14px 0 0;
+    color: #ffffff;
+    float: right;
+}
+.yzyk>.main{
+    width: 1026px;
+    margin: 14px auto 30px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #DFDFDF;
+}
+.yzyk>.main>div{
+    float: left;
+    background-color: #ffffff;
+}
+.yzyk>.main>.left{
+    width: 240px;
+    background-image: url('../image/left-bg.png');
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+}
+.yzyk>.main>.left>div>img{
+    width: 100%;
+    height: 46px;
+    display: block;
+}
+.yzyk>.main>.left>.top>div{
+    margin: 0 14px;
+}
+.yzyk>.main>.left>.top>div>p{
+    border-bottom: 1px solid #579AF5;
+    margin-top: 14px;
+}
+.yzyk>.main>.left>.top>div>p>a{
+    display: inline-block;
+    padding: 0 10px 4px 0;
+    border-bottom: 2px solid #579AF5;
+    font-size: 16px;
+    color: #579AF5;
+}
+.yzyk>.main>.left>.top>div>ul{
+    margin-top: 3px;
+    height: 121px;
+}
+.yzyk>.main>.left>.top>div>ul>li{
+    margin-top: 14px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.yzyk>.main>.left>.top>div>ul>li:before{
+    content: '\2022';
+    font-weight: bolder;
+    color: #579AF5;
+    margin-right: 6px;
+}
+.yzyk>.main>.left>.top>div>ul>li>a{
+    width: 165px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+}
+.yzyk>.main>.left>.top>div>ul>li>span{
+    float: right;
+    color: #666666;
+}
+.yzyk>.main>.middle{
+    width: 585px;
+    padding-bottom: 30px;
+    border-left: 1px solid #DFDFDF;
+}
+.yzyk>.main>.middle>div{
+    margin: 21px 17px 0 16px;
+    overflow: hidden;
+}
+.yzyk>.main>.middle>.title-tzgg{
+    border-bottom: 2px solid #F35526;   
+}
+.yzyk>.main>.middle>.title-zcfg{
+    border-bottom: 2px solid #0867F2;   
+}
+.yzyk>.main>.middle>.title-zsjz{
+    border-bottom: 2px solid #0196A4;   
+}
+.yzyk>.main>.middle>div>.one{
+    width: 157px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.yzyk>.main>.middle>div>.one>img{
+    width: 157px;
+    height: 38px;
+}
+.yzyk>.main>.middle>div>.two{
+    float: right;
+    margin-top: 12px;
+}
+.yzyk>.main>.middle>.title-tzgg>.two{
+    color: #F35526;   
+}
+.yzyk>.main>.middle>.title-zcfg>.two{
+    color: #0867F2;   
+}
+.yzyk>.main>.middle>.title-zsjz>.two{
+    color:  #0196A4;   
+}
+.yzyk>.main>.middle>ul{
+    margin: 0 54px 0 17px;
+    height: 186px;
+}
+.yzyk>.main>.middle>ul>li{
+    margin-top: 20px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.yzyk>.main>.middle>ul>li:before{
+    content: '\2022';
+    font-weight: bolder;
+    color: #535353;
+    margin-right: 6px;
+}
+.yzyk>.main>.middle>ul>li>img{
+    width: 24px;
+    margin-left: 35px;
+}
+.yzyk>.main>.middle>ul>li>a{
+    display: inline-block;
+    color: #333333;
+    width: 330px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.yzyk>.main>.middle>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+
+.yzyk>.main>div>.limit{
+    margin-top: 26px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.yzyk>.main>div>.limit>a{
+    color: #666666;
+}
+.yzyk>.main>div>.limit>span{
+    display: inline-block;
+}
+.yzyk>.main>div>.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.yzyk>.main>div>.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.yzyk>.main>div>.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.yzyk>.main>div>.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.yzyk>.main>div>.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+}
+.yzyk>.main>div>.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+}
+.yzyk>.main>.right{
+    width: 199px;
+    border-left: 1px solid #DFDFDF;
+}
+.yzyk>.main>.right>ul{
+    margin: 0 12px;
+}
+.yzyk>.main>.right>ul>li{
+    margin-top: 17px;
+}
+.yzyk>.main>.right>ul>li>a{
+    display: block;
+}
+.yzyk>.main>.right>ul>li>a>img{
+    display: block;
+    width: 100%;
+}

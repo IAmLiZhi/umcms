@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+body{
+    background: none;
+}
+.boss {
+    padding: 0 25px 0 36px;
+}
+
+.boss>ul>li {
+    margin-top: 20.8px;
+}
+
+.boss>ul>li.even {
+    background-color: #F2F5F7;
+}
+
+.boss>ul>li>.img {
+    width: 80px;
+    height: 100px;
+    vertical-align: top;
+}
+
+.boss>ul>li>.img>img {
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+.boss>ul>li>.info {
+    padding-left: 27px;
+    color: #333333;
+}
+
+.boss>ul>li>* {
+    display: inline-block;
+}
+
+.boss>ul>li>.info>.name {
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.boss>ul>li>.info>.post {
+    margin-top: 25px;
+    font-size: 13px;
+    width: 429px;
+}
+
+.boss>ul>li>.button {
+    width: 85px;
+    float: right;
+    margin-right: 28px;
+}
+
+.boss>ul>li>.button button {
+    width: 85px;
+    height: 26px;
+    border: 0;
+    font-size: 12px;
+}
+
+.boss>ul>li>.button .personal-resume {
+    background-color: #FFE0CC;
+    color: #FF6600;
+    margin-top: 19px;
+}
+
+.boss>ul>li>.button>.important-activities {
+    background-color: #BAD4EA;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.boss>.limit {
+    margin-top: 22px;
+    background-color: #E9E9E9;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+}
+
+.boss>.limit>a {
+    color: #666666;
+}
+
+.boss>.limit>.pagenum {
+    margin: 0 35px 0 17px;
+}
+
+.boss>.limit>.prev {
+    margin: 0 13px 0 18px;
+}
+
+.boss>.limit>.last {
+    margin: 0 38px 0 18px;
+}
+
+.boss>.limit>span>input {
+    width: 33px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid #BFBFBF;
+}
+
+.boss>.limit>p {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    vertical-align: middle;
+    line-height: 21px;
+    text-align: center;
+    margin-left: 6px;
+}
+
+.boss>.limit>p>img {
+    width: 6px;
+    height: 10px;
+}

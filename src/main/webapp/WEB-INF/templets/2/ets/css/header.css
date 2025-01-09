@@ -1,0 +1,14 @@
+.header{
+    width: 1025px;
+    margin: 0 auto;
+    height: 154px;
+}
+.header a{
+    display: inline-block;
+    height: 77px;
+    margin: 39px 0 0 0;
+}
+.header a img{
+    height: 100%;
+    display: block;
+}

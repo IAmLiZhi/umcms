@@ -1,0 +1,375 @@
+/*
+    导航栏
+*/
+.index{
+    position: relative;
+    background-image: url("../image/index-middle-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: 92px;
+    /* overflow: hidden; */
+}
+.index>.nav{
+    min-width: 1026px;
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+}
+.index>.nav>ul{
+    overflow: hidden;
+    width: 1025px;
+    margin: 0 auto;
+}
+.index>.nav>ul>li{
+    width: 92px;
+    float: left;
+    text-align: center;
+    height: 46px;
+}
+.index>.nav>ul>li>a{
+    display: block;
+    height: 100%;
+    line-height: 46px;
+    color: #ffffff;
+    width: 100%;
+}
+.index>.first>ul>li.active{
+    background-color: #3BA2E5;
+}
+.index>.second>ul>li.active{
+    background-color: #35bafe;
+}
+/*
+    第一行
+*/
+.index>.first>ul>li:hover{
+    background-color: #3BA2E5;
+}
+.index>.second>ul>li:hover{
+    background-color: #35bafe;
+}
+.index>.first{
+    background-color: #3579CF;
+}
+.index>.first>ul>.input-box{
+    margin: 12px 0 0;
+    float: right;
+    width: 157px;
+    height: 21px;
+    background-color: #ffffff;
+    padding-left: 9px;
+}
+.index>.first>ul>.input-box input{
+    width: 117px;
+    margin-top: 3px;
+    border: 0;
+    border-right: 1px solid #C4C4C4;
+}
+.index>.first>ul>.input-box p{
+    float: right;
+    padding: 0 7px;
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+/*
+    第二行
+*/
+.index>.second{
+    background-color: #5693F0;
+}
+.index>.second>ul>.date{
+    margin: 14px 0 0;
+    color: #ffffff;
+    float: right;
+}
+
+/*
+    主体内容
+*/
+.index>.main{
+    width: 1025px;
+    margin: 0 auto;
+    border: 1px solid #DFDFDF;
+    border-top: 0;
+    padding-bottom: 24px;
+    background-color: #ffffff;
+}
+
+.index>.main>.list{
+    overflow: hidden;
+}
+.index>.main>.list>div{
+    float: left;
+}
+/*
+    轮播图
+*/
+.index>.main>.top>.banner {
+    position: relative;
+    width: 498px;
+    height: 285px;
+}
+.index>.main>.top>.banner>.move {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.index>.main>.top>.banner>.move>ul,
+.index>.main>.top>.banner>.move>ul>li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.index>.main>.top>.banner>.move >ul> li> a{
+    display: block;
+    height: 100%;
+}
+.index>.main>.top>.banner>.move >ul >li>a> img{
+    width: 100%;
+    height: 100%;
+}
+.index>.main>.top>.banner>.move >ul> li> a> p{
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+.index>.main>.top>.banner>.move >ul> li> a> p >span{
+    width: 75%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.index>.main>.top>.banner>.ctrl {
+    position: absolute;
+    width: 100%;
+    bottom: 9px;
+    text-align: right;
+    padding-right: 26px;
+}
+.index>.main>.top>.banner>.ctrl .libs {
+    display: inline-block;
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    z-index: 50;
+    cursor: pointer;
+}
+.index>.main>.top>.banner>.ctrl span.active {
+    background-color: #fff;
+}
+.index>.main>.top>.banner>.ctrl .arrow {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    top: 50%;
+    margin-top: -30px;
+    background-color: #333;
+    cursor: pointer;
+    font: 30px/58px "å®‹ä½“";
+    opacity: .5;
+    color: #fff;
+    text-align: center;
+}
+.index>.main>.top>.banner>.ctrl .next {
+    top: -140px;
+    right: 0;
+}
+.index>.main>.top>.banner>.ctrl .prev {
+    top: -140px;
+    left: 0;
+}
+.index>.main>.top>.banner>.ctrl .arrow:hover {
+    opacity: 1;
+}
+/*
+    新闻列表
+*/
+.index>.main>.list>div+div{
+    margin-left: 27px;
+}
+.index>.main>.list>.new-list{
+    width: 498px;
+}
+.index>.main>.list>.new-list>.title{
+    border-bottom: 1px solid #3579CF;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    height: 36px;
+    line-height: 36px;
+
+}
+.index>.main>.list>.new-list>.title>p{
+    display: inline-block;
+    border-bottom: 2px solid #3579CF;
+    padding: 0 8px 7px 2px;
+    margin-left: 17px;
+}
+.index>.main>.list>.new-list>.title>p>a{
+    color: #3579CF;
+}
+.index>.main>.list>.new-list>.title>a{
+    float: right;
+    color: #3579CF;
+    font-size: 12px;
+    margin: 5px 9px 0 0;
+}
+.index>.main>.list>.new-list>.title>a>img{
+    width: 13px;
+    height: 10px;
+    margin-top: 10px;
+}
+.index>.main>.list>.new-list>ul{
+    margin: 0 8px;
+}
+.index>.main>.list>.new-list>ul>li{
+    overflow: hidden;
+    list-style: outside;
+    list-style-position: inside;
+    font-size: 12px;
+    margin-top: 11px;
+}
+.index>.main>.list>.new-list>ul>li>img{
+    width: 24px;
+}
+.index>.main>.list>.new-list>ul>li>a{
+    color: #222222;
+    display: inline-block;
+    width: 365px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.index>.main>.list>.new-list>ul>li>.date{
+    float: right;
+    color: #666666;
+}
+.index>.main>.bottom{
+    margin-top: 21px;
+}
+.index>.main>.big-banner{
+    margin-top: 17px;
+    background-image: url('../image/index/banner-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding: 16px 0 13px 17px;
+}
+.index>.main>.big-banner>img{
+    width: 29px;
+    height: 26px;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+.index>.main>.big-banner>p{
+    font-size: 21px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.index>.main>.big-banner>p>a{
+    color: #fff;
+}
+.index>.phone-banner{
+    width: 1025px;
+    margin: 14px auto 49px;
+    overflow: hidden;
+}
+.index>.phone-banner>*{
+    float: left;
+}
+.index>.phone-banner>.left{
+    width: 740px;
+    border: 1px solid #DFDFDF;
+    border-right: 0;
+    height: 245px;
+}
+.index>.phone-banner>.left>div{
+    margin-right: 21px;
+    border-bottom: 1px solid #579AF5;
+    padding-top: 9px;
+}
+.index>.phone-banner>.left>div>p{
+    color: #579AF5;
+    font-size: 17px;
+    border-bottom: 2px solid #579AF5;
+    padding: 0 10px 4px 19px;
+    display: inline-block;
+}
+.index>.phone-banner>.left>div>p>img{
+    width: 26px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.index>.phone-banner>.left>div>img{
+    width: 197px;
+    float: right;
+    margin-top: 5px;
+}
+.index>.phone-banner>.left>ul{
+    overflow: hidden;
+    padding: 29px 0 0 17px;
+}
+.index>.phone-banner>.left>ul>li{
+    width: 228px;
+    height: 64px;
+    float: left;
+    margin: 0 7px 21px 0;
+}
+.index>.phone-banner>.left>ul>li>a>img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.index>.phone-banner>.right{
+    float: left;
+    text-align: center;
+    padding-top: 20px;
+    border: 1px solid #DFDFDF;
+    width: 285px;
+    background-image: url('../image/index/phone-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 245px;
+}
+.index>.phone-banner>.right a {
+    display: inline-block;
+}
+.index>.phone-banner>.right a img {
+    width: 100%;
+}
+.index>.phone-banner>.right>p{
+    border-bottom: 1px solid #579AF5;
+    margin-top: 10px;
+}
+.index>.phone-banner>.right>p>span{
+    display: inline-block;
+    border-bottom: 2px solid #579AF5;
+    padding: 0 1px 9px 50px;
+    color: #579AF5;
+}
+.index>.phone-banner>.right>div>*{
+    text-align: right;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    line-height: 36px;
+    
+}
+.index>.phone-banner>.right>div>p{
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+/* .index>.phone-banner>ul>li{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #374259;
+}
+.index>.phone-banner>ul>li:first-of-type{
+    margin-top: 16px;
+} */

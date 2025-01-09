@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {ms:include filename=head-file.htm/}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{ms:globalskin.url/}/css/xyspcs.css">
+</head>
+<body>
+    {ms:include filename=header.htm/}
+    <div class="xyspcs">
+        <div class="nav first">
+            <ul>
+                <li><a href="{ms:global.url/}/57/index.html">首页</a></li>
+                <li><a href="{ms:global.url/}/65/index.html">机构设置</a></li>
+                <li><a href="{ms:global.url/}/67/index.html">服务指南</a></li>
+                <li><a href="{ms:global.url/}/99/index.html">智慧党建</a></li>
+                <div class="input-box">
+                    <a href="javascript:;">
+                        <input type="text" placeholder="输入关键词搜索">
+                        <p><img src="{ms:globalskin.url/}/image/header/search.png" alt=""></p>
+                    </a>
+                </div>
+            </ul>
+        </div>
+        <div class="nav second">
+            <ul>
+                <li><a href="{ms:global.url/}/71/index.html">高考高招</a></li>
+                <li><a href="{ms:global.url/}/75/index.html">研考研招</a></li>
+                <li><a href="{ms:global.url/}/78/index.html">成考成招</a></li>
+                <li class="active"><a href="#">学业水平</a></li>
+                <li><a href="{ms:global.url/}/82/index.html">高中招生</a></li>
+                <li><a href="{ms:global.url/}/89/index.html">内地班校</a></li>
+                <li><a href="{ms:global.url/}/92/index.html">自学考试</a></li>
+                <li><a href="{ms:global.url/}/95/index.html">社会考试</a></li>
+                    <li><a href="{ms:global.url/}/350/index.html">普通专升本</a></li>
+                <p class="date"></p>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="left">
+                <div class="top">
+                    <img src="{ms:globalskin.url/}/image/xyspks.png" alt="">
+                    <div>
+                        <p>{ms:channel type=self typeid=86}
+                                <a href="[field.typelink/]">[field.typetitle/]</a>
+                            {/ms:channel}</p>
+                        <ul>
+                            {ms:arclist flag=w,h size=5 typeid=86 orderby=date order=desc}
+                                <li><a href="[field.link/]" target="_blank">[field.title/]</a><span class="date">[field.date fmt=MM-dd/]</span></li>
+                            {/ms:arclist}
+                        </ul>
+                    </div>
+                    <div>
+                        <p>{ms:channel type=self typeid=87}
+                                <a href="[field.typelink/]">[field.typetitle/]</a>
+                            {/ms:channel}</p>
+                        <ul>
+                            {ms:arclist flag=w,h size=5 typeid=87 orderby=date order=desc}
+                                <li><a href="[field.link/]" target="_blank">[field.title/]</a><span class="date">[field.date fmt=MM-dd/]</span></li>
+                            {/ms:arclist}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="title-tzgg">
+                    {ms:channel type=self typeid=88}
+                    <a class="one" href="[field.typelink/]">
+                        <img src="{ms:globalskin.url/}/image/tzgg.png" alt=""></a>
+                    <a class="two" href="[field.typelink/]">更多&gt;&gt;</a>
+                    {/ms:channel}
+                </div>
+                <ul>
+                    {ms:arclist flag=w,h size=6 typeid=88 orderby=date order=desc}
+                    <li><a href="[field.link/]" target="_blank">[field.title/]</a><img src="{ms:globalskin.url/}/image/new.png"/><span class="date">[field.date fmt=yyyy-MM-dd/]</span></li>
+                    {/ms:arclist}
+                </ul>
+                <div class="title-zcfg">
+                    {ms:channel type=self typeid=128}
+                    <a class="one" href="[field.typelink/]">
+                        <img src="{ms:globalskin.url/}/image/zcfg.png" alt=""></a>
+                    <a class="two" href="[field.typelink/]">更多&gt;&gt;</a>
+                    {/ms:channel}
+                </div>
+                <ul>
+                    {ms:arclist flag=w,h size=6 typeid=128 orderby=date order=desc}
+                    <li><a href="[field.link/]" target="_blank">[field.title/]</a><img src="{ms:globalskin.url/}/image/new.png"/><span class="date">[field.date fmt=yyyy-MM-dd/]</span></li>
+                    {/ms:arclist}
+                </ul>
+                <div class="title-zsjz">
+                    {ms:channel type=self typeid=129}
+                    <a class="one" href="[field.typelink/]">
+                        <img src="{ms:globalskin.url/}/image/zsjz.png" alt=""></a>
+                    <a class="two" href="[field.typelink/]">更多&gt;&gt;</a>
+                    {/ms:channel}
+                </div>
+                <ul>
+                    {ms:arclist flag=w,h size=6 typeid=129 orderby=date order=desc}
+                    <li><a href="[field.link/]" target="_blank">[field.title/]</a><img src="{ms:globalskin.url/}/image/new.png"/><span class="date">[field.date fmt=yyyy-MM-dd/]</span></li>
+                    {/ms:arclist}
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    {ms:arclist flag=h typeid=130 orderby=sort order=desc}
+                        <li><a href="[field.link/]" target="_blank"><img src="[field.litpic/]" alt=""></a></li>
+                    {/ms:arclist}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {ms:include filename=footer.htm/}
+</body>
+<script src="{ms:globalskin.url/}/js/xyspcs.js"></script>
+</html>

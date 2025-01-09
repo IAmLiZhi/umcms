@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+body{
+    background: none;
+}
+.report>dl p{
+    float: left;
+}
+.report>dl>dt{
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    overflow: hidden;
+    padding: 9px 42px;
+}
+.report>dl .title{
+    width: 467px;
+}
+.report>dl .time{
+    width: 146px;
+}
+.report>dl .state{
+    width: 70px;
+}
+.report dd{
+    padding: 20px 42px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 13px;
+    overflow: hidden;
+}
+.report dd>.title>a{
+    color: #333333;
+}
+.report dd>.title>img{
+    width: 17px;
+    height: 16px;
+    margin-right: 11px;
+    vertical-align: middle;
+}
+.report dd>.time{
+    color: #999999;
+}
+
+.report dd>.already{
+    color: #1890FF;
+}
+p.button{
+    text-align: center;
+    margin: 17px 0;
+}
+p.button button{
+    width: 222px;
+    height: 34px;
+    background-color: #5097ED;
+    color: #ffffff;
+    background-image: url(../image/leave-word.png);
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 73px 8px;
+    border: 0;
+    padding-left: 34px;
+}
+.limit{
+    margin-top: 30px;
+    background-color: #E9E9E9;
+    font-size: 12px;
+    color: #666666;
+    padding: 9px 0;
+    text-align: center;
+}
+.limit>a{
+    color: #666666;
+}
+.limit>span{
+    display: inline-block;
+}
+.limit>.pagenum{
+    margin: 0 35px 0 17px;
+}
+.limit>.prev{
+    margin: 0 13px 0 18px;
+}
+.limit>.last{
+    margin: 0 38px 0 18px;
+}
+.limit>span>input{
+    width: 33px;
+    height: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+.limit>.img-box{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #BFBFBF;
+    text-align: center;
+    margin-left: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.limit>.img-box>img{
+    width: 6px;
+    height: 10px;
+    margin-top: 4px;
+}
+.inline-block {
+    display: inline-block;
+}

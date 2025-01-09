@@ -1,0 +1,217 @@
+.gkgz>.nav{
+    min-width: 1026px;
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+}
+.gkgz>.nav>ul{
+    overflow: hidden;
+    width: 1025px;
+    margin: 0 auto;
+}
+.gkgz>.nav>ul>li{
+    width: 92px;
+    float: left;
+    text-align: center;
+    height: 46px;
+}
+.gkgz>.nav>ul>li>a{
+    display: block;
+    height: 100%;
+    line-height: 46px;
+    color: #ffffff;
+    width: 100%;
+}
+.gkgz>.first{
+    background-color: #3579CF;
+}
+.gkgz>.first>ul>li.active,.gkgz>.first>ul>li:hover{
+    background-color: #3BA2E5;
+}
+.gkgz>.first>ul>.input-box{
+    margin: 12px 0 0;
+    float: right;
+    width: 157px;
+    height: 21px;
+    background-color: #ffffff;
+    padding-left: 9px;
+}
+.gkgz>.first>ul>.input-box input{
+    width: 117px;
+    margin-top: 3px;
+    border: 0;
+    border-right: 1px solid #C4C4C4;
+}
+.gkgz>.first>ul>.input-box p{
+    float: right;
+    padding: 0 7px;
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+.gkgz>.second{
+    background-color: #5693F0;
+}
+.gkgz>.second>ul>li:hover,.gkgz>.second>ul>li.active{
+    background-color: #35bafe;
+}
+.gkgz>.second>ul>.date{
+    margin: 14px 0 0;
+    color: #ffffff;
+    float: right;
+}
+.gkgz>.main{
+    width: 1026px;
+    margin: 14px auto 30px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #DFDFDF;
+}
+.gkgz>.main>div{
+    float: left;
+    background-color: #ffffff;
+}
+.gkgz>.main>.left{
+    width: 240px;
+    background-image: url(../image/left-bg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    padding-bottom: 20px;
+}
+.gkgz>.main>.left>div>img{
+    width: 100%;
+    display: block;
+}
+.gkgz>.main>.left>.top>div{
+    margin: 0 14px;
+}
+.gkgz>.main>.left>.top>div>p{
+    border-bottom: 1px solid #579AF5;
+    margin-top: 14px;
+}
+.gkgz>.main>.left>.top>div>p>a{
+    display: inline-block;
+    padding: 0 10px 4px 0;
+    border-bottom: 2px solid #579AF5;
+    font-size: 16px;
+    color: #579AF5;
+}
+.gkgz>.main>.left>.top>div>ul{
+    margin-top: 3px;
+    height: 121px;
+}
+.gkgz>.main>.left>.top>div>ul>li{
+    margin-top: 14px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.gkgz>.main>.left>.top>div>ul>li:before{
+    content: '\2022';
+    font-weight: bolder;
+    color: #579AF5;
+    margin-right: 6px;
+}
+.gkgz>.main>.left>.top>div>ul>li>a{
+    width: 165px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+}
+.gkgz>.main>.left>.top>div>ul>li>span{
+    float: right;
+    color: #666666;
+}
+.gkgz>.main>.middle{
+    width: 585px;
+    border-left: 1px solid #DFDFDF;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.gkgz>.main>.middle>div{
+    margin: 21px 17px 0 16px;
+    overflow: hidden;
+}
+.gkgz>.main>.middle>.title-tzgg{
+    border-bottom: 2px solid #F35526;   
+}
+.gkgz>.main>.middle>.title-zcfg{
+    border-bottom: 2px solid #0867F2;   
+}
+.gkgz>.main>.middle>.title-zsjz{
+    border-bottom: 2px solid #0196A4;   
+}
+.gkgz>.main>.middle>div>.one{
+    width: 157px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.gkgz>.main>.middle>div>.one>img{
+    width: 157px;
+    height: 38px;
+}
+.gkgz>.main>.middle>div>.two{
+    float: right;
+    margin-top: 12px;
+}
+.gkgz>.main>.middle>.title-tzgg>.two{
+    color: #F35526;   
+}
+.gkgz>.main>.middle>.title-zcfg>.two{
+    color: #0867F2;   
+}
+.gkgz>.main>.middle>.title-zsjz>.two{
+    color:  #0196A4;   
+}
+
+.gkgz>.main>.middle>ul{
+    margin: 0 18px 0 17px;
+    height: 186px;
+}
+.gkgz>.main>.middle>ul>li{
+    margin-top: 18px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.gkgz>.main>.middle>ul>li:before{
+    content: '\2022';
+    color: #535353;
+    font-weight: bolder;
+    margin-right: 6px;
+}
+.gkgz>.main>.middle>ul>li>img{
+    width: 24px;
+}
+.gkgz>.main>.middle>ul>li>a{
+    display: inline-block;
+    color: #333333;
+    width: 430px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.gkgz>.main>.middle>ul>li>.date{
+    float: right;
+    color: #999999;
+}
+.gkgz>.main>.right{
+    width: 199px;
+    border-left: 1px solid #DFDFDF;
+}
+.gkgz>.main>.right>ul{
+    margin: 0 12px;
+}
+.gkgz>.main>.right>ul>li{
+    margin-top: 17px;
+}
+.gkgz>.main>.right>ul>li>a{
+    display: block;
+}
+.gkgz>.main>.right>ul>li>a>img{
+    display: block;
+    width: 100%;
+}
