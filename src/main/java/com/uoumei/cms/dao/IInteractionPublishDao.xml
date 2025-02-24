@@ -19,8 +19,22 @@
 		<result column="reply_content" property="replyContent" />	<!-- 回复信息 -->
 		<result column="reply_time" property="replyTime" />	<!-- 回复时间 -->
 		<result column="isopen" property="isOpen" />	<!-- 是否回复 -->
-		
-		
+	</resultMap>
+	<resultMap type="com.uoumei.cms.entity.InteractionPublishPOEntity" id="resultPOMap">
+		<id column="id" property="id" />				<!-- 主键id -->
+<!--		<result column="name" property="name" />		&lt;!&ndash; 发布人姓名 &ndash;&gt;-->
+<!--		<result column="phone" property="phone" />		&lt;!&ndash; 发布人手机号 &ndash;&gt;-->
+<!--		<result column="card_no" property="cardNo" />	&lt;!&ndash; 发布人身份证号 &ndash;&gt;-->
+		<result column="title" property="title" />		<!-- 发布标题 -->
+		<result column="publish_content" property="publishContent" />			<!-- 发布内容 -->
+		<result column="file_url" property="fileUrl" />	<!-- 附加文件 -->
+		<result column="type" property="type" />		<!-- 发布类型,1.咨询,2.投诉,3.反馈,4.信箱 -->
+		<result column="state" property="state" />		<!-- 发布状态,1.已回复,2.未回复 -->
+		<result column="create_time" property="createTime" />	<!-- 发布时间 -->
+		<result column="app_id" property="appId" />	<!-- app_id -->
+		<result column="reply_content" property="replyContent" />	<!-- 回复信息 -->
+		<result column="reply_time" property="replyTime" />	<!-- 回复时间 -->
+		<result column="isopen" property="isOpen" />	<!-- 是否回复 -->
 	</resultMap>
 
 	<!-- 保存发布 -->
@@ -52,7 +66,7 @@
 		ORDER BY create_time desc
 	</select>
 	<!-- 查询回复和未回复 -->
-	<select id="queryByState" resultMap="resultMap" parameterType="int">
+	<select id="queryByState" resultMap="resultPOMap" parameterType="int">
 		SELECT i.id,i.app_id,i.name,i.phone,i.card_no,i.title,i.publish_content,i.file_url,i.type,i.state,i.create_time,r.reply_time,r.isopen
 		FROM interaction_publish i LEFT JOIN interaction_reply r on (i.id = r.publish_id)
 		where i.app_id = #{appId} and i.type= #{type} and i.state = 1 and r.isopen = 0 

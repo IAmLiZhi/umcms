@@ -29,6 +29,7 @@
 		<jstl.version>1.2</jstl.version>
 		<taglibs.version>1.1.2</taglibs.version>
 		<cxf.version>3.1.1</cxf.version>
+		<sa-token-version>1.28.0</sa-token-version>
 	</properties>
 	<dependencies>
 		<!-- <dependency> <groupId>net.uoumei</groupId>
@@ -543,6 +544,31 @@
 			<version>3.1</version>
 		</dependency>
 
+		<!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->
+<!--		<dependency>-->
+<!--			<groupId>cn.dev33</groupId>-->
+<!--			<artifactId>sa-token-spring-boot-starter</artifactId>-->
+<!--			<version>${sa-token-version}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>cn.dev33</groupId>-->
+<!--			<artifactId>sa-token-core</artifactId>-->
+<!--			<version>${sa-token-version}</version>-->
+<!--		</dependency>-->
+
+<!--		&lt;!&ndash; Sa-Token 整合  Redis (使用jdk默认序列化方式) &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>cn.dev33</groupId>-->
+<!--			<artifactId>sa-token-dao-redis</artifactId>-->
+<!--			<version>${sa-token-version}</version>-->
+<!--		</dependency>-->
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
 

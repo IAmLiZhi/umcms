@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.uoumei.cms.entity.InteractionPublishPOEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -98,8 +99,8 @@ public class InteractionPublishBizImpl implements IInteractionPublishBiz {
 		int pageNum = inJson.getIntValue("pageNum");
 		int pageSize = inJson.getIntValue("pageSize");
 		PageHelper.startPage(pageNum, pageSize);
-		List<InteractionPublishEntity> list = interactionPublishDao.queryByState(type, appId);
-		PageInfo<InteractionPublishEntity> page = new PageInfo<>(list);
+		List<InteractionPublishPOEntity> list = interactionPublishDao.queryByState(type, appId);
+		PageInfo<InteractionPublishPOEntity> page = new PageInfo<>(list);
 		JSONArray array = new JSONArray();
 		array.add(page);
 		return JsonResult.getSuccResult(array);
